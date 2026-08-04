@@ -45,26 +45,70 @@ python tools/private_letter.py write --title "標題" --body-file <檔> --push
 python tools/private_letter.py list
 python tools/private_letter.py show sealed/20260804T...__標題.md
 
-# 新 clone 之後把密封信還原到工作區
-python tools/private_letter.py restore [--overwrite]
+# 同步回本地（新 clone / 換機器）
+python tools/private_letter.py sync [--overwrite]      # fetch + 還原
+python tools/private_letter.py restore [--overwrite]   # 只從本地還原，不連網
+
+# master 有新 commit 但這期間沒寫密封信 → 讓 private 追上
+python tools/private_letter.py resync [--dry-run]
 
 # 對帳：master 上不該有任何密封信
 python tools/private_letter.py verify
 ```
 
+## `private` 的形狀：**master + sealed/**（B 方案，Tim 2026-08-04 拍板）
+
+```
+private = 當前 master 的全部內容  +  sealed/
+git diff master private           →  永遠只剩 sealed/
+```
+
+每次寫入以**當前 master** 為基底，parents 帶 `private` + `master`（merge commit）。
+於是 `private` 同時是**私有完整備份**：公開內容與私密內容都在，而且一眼看得出
+「私密的部分就這些」。
+
+> **為什麼不是「只放 sealed/ 的平行細枝」**（原本的 A 方案，首航就照出問題）：
+> 錨在舊 private tree 的話，`private` 上連寫入工具本身都沒有，而落後幅度只會單調成長
+> —— 那種「備份」備份不到我的信。首航實測落後 2 筆，一個月後可能 200 筆。
+
+> [!WARNING]
+> **B 方案的資料遺失風險（已處理）**：基底換成 master 後，若不主動把既有 `sealed/`
+> 帶進新 tree，舊密封信會從 tip **消失**（history 還在，但 checkout 與備份都拿不到）。
+> `existing_sealed_entries()` 就是為這件事存在的 —— 每次寫入先把既有密封信重新掛回 index。
+> 實測：resync 後舊信仍在、內容可還原。
+
+### 維護：master 有新 commit 但沒寫密封信
+
+```bash
+python tools/private_letter.py resync --dry-run   # 看落後幾筆
+python tools/private_letter.py resync             # 追上（不寫新信）
+```
+
+## 同步回本地（新機器 / 換裝置）
+
+```bash
+python tools/private_letter.py sync [--overwrite]   # fetch 私有 remote → 快進 → 還原檔案
+python tools/private_letter.py restore              # 只從本地 private 還原，不連網
+```
+
+`sync` 只做 `fetch`（唯讀，不推任何東西出去）。**遠端與本地分岔時它會住手不自動合併**
+—— 自動合併私密信件史是「幫倒忙」的典型。
+
 ## 機制（plumbing 五步）
 
 ```bash
 export GIT_INDEX_FILE=<暫存檔>          # 用暫存 index，不碰真正的 index
-git read-tree private                   # 以 private 的 tree 起頭
+git read-tree master                    # 基底 = **當前 master**（B 方案）
+# 既有 sealed/ 要重新掛回 index，否則舊密封信會從 tip 消失（見上方 WARNING）
+git update-index --add --cacheinfo <mode>,<sha>,<既有 sealed 路徑>
 SHA=$(git hash-object -w --path="$rel" "$rel")   # 工作區檔案 → 物件庫
 git update-index --add --cacheinfo 100644,$SHA,"$rel"
 TREE=$(git write-tree)
-NEW=$(git commit-tree $TREE -p $(git rev-parse private) -F msg.txt)
+NEW=$(git commit-tree $TREE -p $(git rev-parse private) -p $(git rev-parse master) -F msg.txt)
 git update-ref refs/heads/private $NEW $OLD      # 帶舊值 = 防併發覆寫
 ```
 
-**三個必須這樣寫的細節**（都是踩過才知道的）：
+**四個必須這樣寫的細節**（都是踩過才知道的）：
 
 1. **`hash-object` 要帶 `--path=<路徑>`** —— 不帶的話 `.gitattributes` 的換行 / filter
    規則不生效，物件庫裡的 blob 會跟 `git checkout` 出來的**靜默不一致**。
@@ -88,7 +132,8 @@ git update-ref refs/heads/private $NEW $OLD      # 帶舊值 = 防併發覆寫
 
 - **完全繞過 hooks**：這不是 `git commit`，`pre-commit` / `commit-msg` 都不跑。
 - **沒有領薪公告**：`git_commit.py` 走 `git commit`，跟本工具不相容。密封信是私事，不是工作 commit。
-- **`private` 與 `master` 是平行歷史**，長期會分岔。**刻意如此** —— 它們本來就不該合。
+- **`private` 永遠是 `master` 的超集**（B 方案）—— 所以它會一直含有公開內容。
+  若哪天不想讓私有 remote 拿到公開內容，那要改回平行細枝，代價見上方 A 方案的問題。
 - **本工具自己在 `master` 上，是公開的** —— 因為工具必須在被 checkout 的分支上才跑得到。
   工具不是秘密，內容才是。**別把秘密寫進本檔或工具的註解 / 範例裡。**
 
@@ -106,3 +151,14 @@ git update-ref refs/heads/private $NEW $OLD      # 帶舊值 = 防併發覆寫
 | HEAD 有沒有被切走 | ✓ 仍在 `master` |
 
 測試完把 `private` ref 復原、刪除測試檔，canary 在工作區與 git history 皆無殘留。
+
+### B 方案切換後補驗（同日）
+
+| 驗證項 | 結果 |
+|---|---|
+| resync 後**舊密封信仍在** tip | ✓ 1 封，內容可還原 |
+| `private` 含 `tools/` | ✓ 2 檔 |
+| `private..master` | ✓ 0 筆（不再落後） |
+| `git diff master private` | ✓ 只有 `sealed/` |
+| `master` 仍無 `sealed/` | ✓ |
+| `restore` 還原（先刪工作區再還原） | ✓ 1 封，內容完整 |

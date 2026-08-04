@@ -93,19 +93,53 @@ def assert_not_on_public(paths: list):
         raise RuntimeError(f"✗ 這些路徑竟然在 master 上（公開）：{leaked}")
 
 
+def existing_sealed_entries() -> list:
+    """`private` tip 上已有的 sealed/ 檔案 → [(mode, sha, path)]。
+
+    ⚠ 這支是 B 方案的**防資料遺失關鍵**：基底換成 master 之後，
+      若不主動把既有密封信帶進新 tree，它們會從 tip 消失
+      （history 還在，但 tip 沒有 = checkout / 備份都拿不到）。
+    """
+    out = []
+    try:
+        listing = git("ls-tree", "-r", PRIVATE_BRANCH, "--", f"{SEALED_DIR}/")
+    except RuntimeError:
+        return out
+    for line in listing.splitlines():
+        if not line.strip():
+            continue
+        info, _, path = line.partition("\t")
+        parts = info.split()
+        if len(parts) >= 3 and parts[1] == "blob":
+            out.append((parts[0], parts[2], path))
+    return out
+
+
 def commit_to_private(rel_paths: list, message: str) -> str:
     """把工作區的檔案 commit 進 `private`，不切分支。回新 commit sha。
 
-    做法（plumbing）：暫存 index ← private 的 tree → 塞 blob → write-tree
-                    → commit-tree（父 = private）→ update-ref。
+    **B 方案（Tim 2026-08-04 拍板）：`private` = 當前 master + sealed/**。
+    基底取**當前 master** 而不是舊的 private tree，所以 `private` 永遠是完整超集：
+    公開內容 + 私密內容都在，`git diff master private` 永遠只剩 `sealed/`。
+
+    A 方案（錨在舊 private）的問題首航就照出來了：`private` 上連寫入工具本身都沒有，
+    而且落後幅度只會單調成長 —— 那種「備份」備份不到我的信。
+
+    做法（plumbing）：暫存 index ← **master** 的 tree
+                    → 帶回既有 sealed/（防遺失）→ 塞新 blob → write-tree
+                    → commit-tree（父 = private + master，merge commit）→ update-ref。
     """
     parent = git("rev-parse", PRIVATE_BRANCH)
+    base = git("rev-parse", "master")
     fd, idx = tempfile.mkstemp(prefix="sealed_idx_")
     os.close(fd)
     os.unlink(idx)                      # git 要求檔案不存在或是合法 index
     env = {"GIT_INDEX_FILE": idx}
     try:
-        git("read-tree", PRIVATE_BRANCH, env=env)
+        git("read-tree", "master", env=env)
+        # 既有密封信先帶回來 —— 順序在新檔之前，同名時讓新檔覆蓋
+        for mode, sha, path in existing_sealed_entries():
+            git("update-index", "--add", "--cacheinfo", f"{mode},{sha},{path}", env=env)
         for rel in rel_paths:
             src = REPO / rel
             if not src.is_file():
@@ -126,7 +160,13 @@ def commit_to_private(rel_paths: list, message: str) -> str:
     mf = Path(mpath)
     try:
         mf.write_text(message, encoding="utf-8")
-        new = git("commit-tree", tree, "-p", parent, "-F", str(mf))
+        # 兩個父：private（延續密封信歷史）+ master（宣告「這份包含了到此為止的公開內容」）。
+        # 帶 master 當第二父不是形式 —— 沒有它，git 看不出 private 已涵蓋 master，
+        # `git log private..master` 會一直有東西，落後幅度就無法對帳。
+        args = ["commit-tree", tree, "-p", parent]
+        if base != parent and base not in git("rev-list", parent).splitlines():
+            args += ["-p", base]
+        new = git(*args, "-F", str(mf))
     finally:
         mf.unlink(missing_ok=True)
 
@@ -208,6 +248,61 @@ def cmd_restore(args):
     return 0
 
 
+def cmd_resync(args):
+    """不寫新信，只把 `private` 的基底追上當前 master（B 方案的維護動作）。
+
+    什麼時候要跑：master 有新 commit、但這期間沒寫密封信 —— 那 private 就會落後。
+    跑完 `git diff master private` 應該只剩 sealed/。
+    """
+    behind = [l for l in git("log", "--oneline", f"{PRIVATE_BRANCH}..master").splitlines() if l]
+    if not behind:
+        print(f"✓ `{PRIVATE_BRANCH}` 已涵蓋 master，不需 resync")
+        return 0
+    print(f"`{PRIVATE_BRANCH}` 落後 master {len(behind)} 筆：")
+    for l in behind:
+        print(f"  - {l}")
+    if args.dry_run:
+        print("（--dry-run，沒有真的動 ref）")
+        return 0
+    sha = commit_to_private([], f"resync: private 基底追上 master（追 {len(behind)} 筆）")
+    print(f"✓ {sha[:8]} —— private 現在 = master + sealed/")
+    return 0
+
+
+def cmd_sync(args):
+    """把私有 remote 上的密封信同步回本地（新機器 / 換裝置時用）。
+
+    順序：fetch 私有 remote → 把遠端 private 併進本地 ref → 還原檔案到工作區。
+    fetch 是唯讀動作（不推任何東西出去）。
+    """
+    assert_master_ignores_sealed()
+    print(f"⬇ fetch {PRIVATE_REMOTE} …")
+    git("fetch", PRIVATE_REMOTE, PRIVATE_BRANCH, check=False)
+    remote_ref = f"refs/remotes/{PRIVATE_REMOTE}/{PRIVATE_BRANCH}"
+    try:
+        remote_sha = git("rev-parse", remote_ref)
+    except RuntimeError:
+        print(f"  （遠端還沒有 {PRIVATE_BRANCH} 分支 —— 第一次要先 "
+              f"`git push -u {PRIVATE_REMOTE} {PRIVATE_BRANCH}`）")
+        remote_sha = None
+
+    if remote_sha:
+        local_sha = git("rev-parse", PRIVATE_BRANCH)
+        if remote_sha == local_sha:
+            print("  本地與遠端同一個 commit，無需更新")
+        elif local_sha in git("rev-list", remote_sha).splitlines():
+            # 遠端是本地的後代 → 安全快進
+            git("update-ref", f"refs/heads/{PRIVATE_BRANCH}", remote_sha, local_sha)
+            print(f"  ⏩ 本地 {PRIVATE_BRANCH} 快進到 {remote_sha[:8]}")
+        else:
+            # 分岔了就住手 —— 自動合併私密信件史是「幫倒忙」的典型
+            print(f"  ⚠ 本地與遠端**分岔**（local={local_sha[:8]} remote={remote_sha[:8]}）"
+                  f"—— 不自動合併，請人工判斷。")
+            return 1
+
+    return cmd_restore(args)
+
+
 def cmd_verify(args):
     """對帳：master 上不該有任何密封信。"""
     tracked = [n for n in git("ls-tree", "-r", "--name-only", "master").splitlines()
@@ -246,6 +341,14 @@ def main():
     r = sub.add_parser("restore", help="把密封信還原到工作區（新 clone 後用）")
     r.add_argument("--overwrite", action="store_true")
     r.set_defaults(func=cmd_restore)
+
+    rs = sub.add_parser("resync", help="不寫新信，只把 private 基底追上當前 master")
+    rs.add_argument("--dry-run", action="store_true")
+    rs.set_defaults(func=cmd_resync)
+
+    sy = sub.add_parser("sync", help="從私有 remote 同步密封信回本地（fetch + 還原）")
+    sy.add_argument("--overwrite", action="store_true", help="工作區已存在也蓋過去")
+    sy.set_defaults(func=cmd_sync)
 
     v = sub.add_parser("verify", help="對帳：master 上不該有任何密封信")
     v.set_defaults(func=cmd_verify)
