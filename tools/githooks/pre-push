@@ -1,0 +1,28 @@
+#!/bin/sh
+# 區塊職責：擋下「private 分支被推到非私有 remote」——結構性防線，不靠人記得。
+# 物理意義：本 repo 的 master 追公開 GitHub、private 只該去私有 GitLab。
+#          密封信一旦上了公開 remote，history 刪不掉（事後刪檔只是再加一個 commit）。
+# 邊界：hook 判斷的是**目標 remote 的 URL**，不是 remote 名字 —— 名字可以被改，URL 才是事實。
+# 為什麼放在 tools/githooks（版控內）而不是 .git/hooks：
+#   .git/hooks 不進版控，換機器 clone 就沒有防線。這裡放版控 + core.hooksPath 指過來，
+#   新機器只要跑一次 `git config core.hooksPath tools/githooks` 就恢復。
+ALLOWED_HOST='gitlab.com'
+remote_name="$1"
+remote_url="$2"
+
+while read -r local_ref local_sha remote_ref remote_sha; do
+    case "$local_ref$remote_ref" in
+        *refs/heads/private*)
+            case "$remote_url" in
+                *"$ALLOWED_HOST"*) ;;   # 私有 GitLab，放行
+                *)
+                    echo "✗ 拒絕推送：private 分支只能推到 $ALLOWED_HOST（私有）。" >&2
+                    echo "  目標 remote: $remote_name  → $remote_url" >&2
+                    echo "  private 含密封信；推上公開 remote 後 history 刪不掉。" >&2
+                    exit 1
+                    ;;
+            esac
+            ;;
+    esac
+done
+exit 0
