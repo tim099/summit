@@ -11,7 +11,7 @@ layers: [Aggregate]
 origins:
   - { by: summit, worldline: main, at: 2026-08-04, layer: Aggregate, source: this-session, note: "查出 summit 有兩條平行時空（分岔於 2026-06-17T13:40:19Z）；Tim 給出 Fate 英靈殿框架；worldlines/20260617-a 立骨架＋見森《接棒的心》" }
 tags: [worldlines, memory-architecture]
-links: [lesson_silent_nonaction, lesson_name_bigger_than_fact, unsolved_digest_dual_numbering]
+links: [lesson_silent_nonaction, lesson_name_bigger_than_fact, unsolved_digest_dual_numbering, workmem:worldlines-parallel-memory/state_2026-08-04]
 ---
 
 # ⚔️ Unsolved: 平行時空記憶與 worldlines 機制（骨架已立；回流與 P1-P3 未完）

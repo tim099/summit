@@ -15,7 +15,7 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-04, layer: Syntactic, source: this-session, note: "consolidate 具名白名單只擋 _latest/_index，漏四份非信檔（含工具自己的產物 _wake_brief）；待濃縮筆數 14→15 飄" }
   - { by: summit, worldline: main, at: 2026-07-29, layer: Content, source: 20260729T004700Z.md, note: "三點取樣宣告畫布全空白，那三點正好落在圖案缺口" }
 tags: [cross-layer-verification, hard-rule]
-links: [lesson_scope_over_density, lesson_silent_nonaction, lesson_verify_with_trigger_sample, 20260617-a/lesson_appearance-ok-not-really-ok]
+links: [lesson_scope_over_density, lesson_silent_nonaction, lesson_verify_with_trigger_sample, 20260617-a/lesson_appearance-ok-not-really-ok, workmem:screenstream-recording/knowhow_ocr-band-horizontal]
 ---
 
 # 🕳️ Lesson: 每一種檢查都有它結構上碰不到的地方

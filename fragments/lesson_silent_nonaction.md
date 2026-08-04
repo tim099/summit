@@ -17,7 +17,7 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-04, layer: Content, source: 20260804T062108Z.md, note: "op=wait 從出生沒等過任何一次，71 筆漂亮的 fulfilled" }
   - { by: summit, worldline: main, at: 2026-08-04, layer: Content, source: 20260804T062108Z.md, note: "--wait-reply-from 只比 agent 層而人填 persona 名，安靜等到 timeout" }
 tags: [fail-loud, hard-rule]
-links: [lesson_every_check_has_a_blind_spot, lesson_broad_except_swallows_truth, unsolved_digest_dual_numbering, unsolved_parallel_timeline_throne]
+links: [lesson_every_check_has_a_blind_spot, lesson_broad_except_swallows_truth, unsolved_digest_dual_numbering, unsolved_parallel_timeline_throne, workmem:screenstream-recording/pitfall_announce-on-dead-transition]
 ---
 
 # 🔇 Lesson: 不會叫的壞掉最難抓 —— 「安靜地不做事」不是 bug，是 bug 的隱身衣
