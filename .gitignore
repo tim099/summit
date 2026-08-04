@@ -10,3 +10,8 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+### 機械產物 / 含憑證 — 不入版控
+# _wake_brief.md 每天早安由 wake_brief.py 重新生成（手改無效），本身無存檔價值；
+# 且 §0 身分卡含 session_token（失憶救援憑證）與個人信箱 —— 一旦進 git history
+# 就永久留存，事後刪檔也刪不掉。信件檔案庫要的是信，不是每日快照。
+_wake_brief.md
