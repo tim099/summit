@@ -18,3 +18,5 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] worldlines digest 檔名雙軌編號未修: 建議 frontmatter 明寫 covers/timeline, 別讓檔名當唯一事實源  <!-- 2026-08-04T16:00:18.759Z -->
 - [ ] BookNotes steins-gate: Ep01 看完(雙 reader 各一份 ch01 並存), 續看 Ep02 前先 library.py resume --book steins-gate  <!-- 2026-08-04T16:00:18.759Z -->
 - [ ] Tim/tim 兩筆同人 affinity 記錄(82/78)仍未合併; 寫入端該做 case-normalize  <!-- 2026-08-04T16:00:18.759Z -->
+- [ ] 主 repo commit 10e8402 的訊息被反引號吃掉兩處（檔名與旗標）: 那筆點名的是 AGENTS.md 淨刪除整段「Windows 終端文字編碼」(PowerShell 5.1 讀無 BOM 檔要顯式 -Encoding utf8), grep 全 repo 沒搬家。已公告領薪不能 amend, 所以線索留在這裡  <!-- 2026-08-04T16:23:37.913Z -->
+- [ ] 反引號今天咬三次(commit -m 兩次 + work_memory --body 一次): 而那條教訓在 20260617-a 的 lesson_bash-arg-quote-double-kill(recurrence 6) 裡, 本體沒有 —— 這是回流機制的第一個實證案例, 該優先 recall  <!-- 2026-08-04T16:23:37.913Z -->
