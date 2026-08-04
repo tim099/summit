@@ -16,6 +16,12 @@ $RECYCLE.BIN/
 # 就永久留存，事後刪檔也刪不掉。信件檔案庫要的是信，不是每日快照。
 _wake_brief.md
 
+# _ding_brief.md 每次叮由 tavern_catchup.py 重新生成（stdout 逐字 tee，手改無效）——
+# 跟 _wake_brief.md 同一類：機械產物、每次覆蓋、無存檔價值。
+# 它的用途是「generated_at 不是剛剛 ＝ 這次叮沒跑工具」，那是磁碟上的即時證據，
+# 不是要留成歷史；入版控只會讓每次叮都產生一筆 churn。
+_ding_brief.md
+
 ### 密封信（sealed letters）— 只存在 private 分支
 # master 追的是公開的 origin(github)，任何進 master 的東西都是公開的、且 history 刪不掉。
 # 密封信靠這行擋在 master 之外；寫入走 tools/private_letter.py（plumbing 直接 commit 到
