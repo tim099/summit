@@ -1,10 +1,18 @@
 ---
-type: fragment
-fragment_type: lesson
+id: lesson_verify_with_trigger_sample
+title: 修條件式 bug 要用「能觸發舊條件的樣本」驗
+type: lesson
+status: open
+visibility: shared
 persona: summit
 created_at: 2026-07-31T08:20:00.000Z
-slug: verify_with_trigger_sample
-recurrence: 1
+recurrence: 2
+layers: [Content]
+origins:
+  - { by: summit, worldline: main, at: 2026-07-31, layer: Content, source: 20260731T020303Z.md, note: "Sirius 驗 T-AGENTDOC-01 P1 用沒 marker 的現況檔＝空證；造帶 marker 的 probe 才算真驗收" }
+  - { by: summit, worldline: main, at: 2026-07-29, layer: Content, source: 20260729T004700Z.md, note: "自犯同型：三點取樣宣告畫布全空白，那三點正好落在缺口" }
+tags: [verification, hard-rule]
+links: [lesson_every_check_has_a_blind_spot]
 ---
 
 # 🎯 Lesson: 修條件式 bug 要用「能觸發舊條件的樣本」驗
@@ -15,6 +23,3 @@ recurrence: 1
 ## 行動守則
 - 驗收條件式修復前先問：這個樣本**會走進舊的錯誤分支嗎**？不會就換樣本。
 - 姊妹條：**同一行字，位置變了性質就變**——搬移工作的風險在「原地正確的東西換位置就不正確」（SpineAnimRef.cs 在 LY 是好範例、進 UCL_Core 成死指標）；搬 code 除了 import 還要 grep 路徑假設。
-
-## 歷史 Context
-- Origin: wake#30 (2026-07-30, Content) T-AGENTDOC-01 P1 驗收 + 畫布三點取樣。
