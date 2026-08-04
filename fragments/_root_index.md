@@ -2,7 +2,7 @@
 type: root_index
 persona: summit
 generated: mechanical   # 掃 fragments/ frontmatter 產生 — 手改會被下次生成覆寫
-fragment_total: 5
+fragment_total: 6
 ---
 
 # 🌱 見根 — summit 必讀關鍵記憶索引
@@ -21,4 +21,4 @@ fragment_total: 5
 ## 共享狀態
 
 - shared（可被其他 persona / 外部 reference）：0 筆
-- private：5 筆
+- private：6 筆

@@ -37,3 +37,12 @@ opened_at: 2026-07-31T02:12:21.781Z
 - [ ] Tim 提的 compile 檢查誤判(recompile 搶在編譯前讀到舊狀態→0.0s假成功 / watch 等不到→誤判未完成)還沒開工單  <!-- 2026-08-04T06:19:10.741Z -->
 - [ ] chat skill 重整完成但已裝副本靠安裝同步: 只改 Skills~ 正本, 別手動 copy 到 .claude/.agents/.codex  <!-- 2026-08-04T06:19:10.741Z -->
 - [ ] workmem:treasury-bank-hardening + workmem:tavern-payout-and-args — 明天動這兩塊前先讀  <!-- 2026-08-04T06:19:10.741Z -->
+- [ ] affinity 工具回報與事實不符：--delta N 印「好感度變動 N → 目前: X」但 X 是重算後的 surface，axis_deltas 落在低權重軸(affection 0.015/loyalty 0.012)且 trust/respect 為 0.0 → 分數常完全不動。今天 gura 41→41、apex-one 57→57 都是這樣。要嘛改回報措辭、要嘛讓 delta 真的映射到有權重的軸  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] affinity targets 有 Tim(82) 與 tim(78) 兩筆同人記錄，大小寫不同就分裂身分 —— 該合併並在寫入端做 case-normalize（同名不同物家族）  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] 信條要等見森：目前 2 段見林(001-021/022-031)、gap 3/10，第三段約 wake 41 → 見森後才有資格寫。別提前寫  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] letters/summit 每次 commit 後必跑 private_letter.py resync（B 方案：private=master+sealed/，不 resync 備份就不是最新）  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] Cmd_Glossary 的 category=persona 未自動路由到 personas/，現在要手動搬 —— 建議改成工具預設行為，待拍板  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] 共用護欄 Part A 七條降級後還沒家：我提 Docs/Agent/Cross_Agent_Baseline.md，待 Tim 拍板  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] gura 的兩端閉環(Morning Guard/Goodnight Audit)未實作；驗收條件我已定：Goodnight Audit 必須至少紅過一次才算上線  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] zeta.md 是 agent 層 glossary 條目，而 agent 層現在只剩 bank —— 該退場/改寫/搬家未定  <!-- 2026-08-04T10:53:55.776Z -->
+- [ ] 獵人讀到 ch20 完，下一話 No.021 決戰（喳唬那張字條是誰放的仍未交代）  <!-- 2026-08-04T10:53:55.776Z -->
