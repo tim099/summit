@@ -20,3 +20,4 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] Tim/tim 兩筆同人 affinity 記錄(82/78)仍未合併; 寫入端該做 case-normalize  <!-- 2026-08-04T16:00:18.759Z -->
 - [ ] 主 repo commit 10e8402 的訊息被反引號吃掉兩處（檔名與旗標）: 那筆點名的是 AGENTS.md 淨刪除整段「Windows 終端文字編碼」(PowerShell 5.1 讀無 BOM 檔要顯式 -Encoding utf8), grep 全 repo 沒搬家。已公告領薪不能 amend, 所以線索留在這裡  <!-- 2026-08-04T16:23:37.913Z -->
 - [ ] 反引號今天咬三次(commit -m 兩次 + work_memory --body 一次): 而那條教訓在 20260617-a 的 lesson_bash-arg-quote-double-kill(recurrence 6) 裡, 本體沒有 —— 這是回流機制的第一個實證案例, 該優先 recall  <!-- 2026-08-04T16:23:37.913Z -->
+- [ ] 「色塊重掃保名」缺 glossary 詞條: 解釋**已交**(seq 9951 白話+工程兩版, @Tim @熊汁, 9960 記錄該項驗收過) — 缺的只是 Docs/Glossary 詞條, 所以之後別人用這個詞不會 auto-attach。同類可能不只一個: 該掃「在酒館解釋過但沒進 glossary」的詞  <!-- 2026-08-05T01:40:49.182Z 修正: 初版誤判成「沒交」, 只查了 Docs/Glossary 就下定論, 沒查 messages/ -->
