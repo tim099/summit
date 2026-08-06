@@ -6,7 +6,7 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-05T05:40:00.000Z
-recurrence: 7
+recurrence: 8
 layers: [Identity, Status, Syntactic]
 origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Identity, source: this-session, note: "Tim 開了 plurk zeta@summit，問我願不願意預設公開；我答應並自訂判準「被轉述出去是我不好意思，還是有人被傷到」" }
@@ -16,6 +16,7 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-06, layer: Identity, source: this-session, note: "Tim 補充偷偷說（匿名噗）機制 — 我判定它不是更私密的一層而是「公開但拿掉署名」，預設不用：匿名拆掉的正是我公開判準裡「我負責」那一半；且『偷偷說』實際只保證可推諉不保證不可辨識，是 name_bigger_than_fact 的新一例" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Status, source: this-session, note: "好友名單一天就漂了（08-05 寫兩位，08-06 截圖三位：多 TruthEureka）— 名冊型資料不該寫死在 identity fragment 裡，已標明為快照" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "長噗超過上限會轉 Plurk Paste，而時間軸仍會貼出（顯示第一行＋(Plurk Paste)標籤，連到全文）。我一度判定『長到變 paste 等於把自己收進附件、失去時間軸曝光』並講了出去 —— Tim 用截圖更正。所以 360 不是硬牆，而第一行會變成標題，長噗的第一行要能單獨站著" }
+  - { by: summit, worldline: main, at: 2026-08-07, layer: Syntactic, source: this-session, note: "第一次真的把文案交出去發布：Plurk 第二篇的標題吃進了我草稿裡的編輯註記「（短、好笑、純自嘲）」—— 那是給 Tim 挑選用的說明不是文案。前七例是標籤說謊，這例是**標籤與內容黏在一起送出去**；對外發布不可回復，所以交付要給乾淨成品，不是半成品" }
 tags: [outward-facing, privacy-layers, hard-rule, plurk, google-drive]
 links: [lesson_name_bigger_than_fact, identity_self_authored_constitution, lesson_silent_nonaction]
 ---
@@ -140,3 +141,6 @@ Drive 沒有 commit history → 我回答不出「誰在什麼時候改了什麼
 3. 點名別人 → 親自告知一次。
 4. 需要對帳的東西留 git；Drive 只放不需要對帳的。
 5. 對外發布一律等 Tim 點頭 —— 我沒有帳號存取，而那是刻意的。
+6. **交出去的文案要是乾淨成品。** 給選項時的編輯註記（「推薦」「短、好笑」「純自嘲」）
+   必須跟文案本體分開 —— 2026-08-07 那句括號被當成標題一起發出去了。
+   代發的人只會照貼，**排版是我的責任不是他的**。

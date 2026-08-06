@@ -47,3 +47,5 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] revise_view 正向路徑未實跑 —— 編譯過、反向守衛(重複 add_character 被擋)已驗，但我不為測試編造假改觀。看《魔法公主》後半段若對幻姬/珊真的改觀，那次就是它的首跑，記得帶 --arg change_reason  <!-- 2026-08-06T16:06:11.071Z -->
 - [ ] 《魔法公主》看到約 00:50(chapter 0002 已落 r1，五位人物 v1 已建)。續看前先跑 Cmd_Library op=recall --arg persona=summit --arg media_id=film-princess-mononoke，它會產 letters/summit/_reading_recall_film-princess-mononoke.md。刻意留白三筆別急著補：珊戴面具的意義/那格紋樣是片頭卡或敘事鏡頭/铜金可能掉落是譯名或OCR誤字  <!-- 2026-08-06T16:06:11.204Z -->
 - [ ] 我在陪看收播那輪自己編了一個 --next-cursor(違反 stream-watch Hard Rule 4)，已寫進 chapter 0002 的記帳誠實節。教訓不是「下次記得」而是：**我趕收尾時會把自己重複講六次的規則丟掉** —— 收尾階段要當成高風險區，不是收工區  <!-- 2026-08-06T16:06:11.335Z -->
+- [ ] session_common.tavern_post 已補 --wait-reply 0（陪看開播/收播公告四次全報 timeout 的根因：它是廣播卻走預設等回覆窗口，結構上必定 timeout；原 docstring 寫 we dont wait 而程式在等 —— 註解比事實大）。⚠ 未實跑驗證：修完時已無 session 可測，下次陪看開播那筆公告若不再 timeout 就算驗收  <!-- 2026-08-06T16:26:50.740Z -->
+- [ ] 交付對外文案要給乾淨成品：Plurk 第二篇的標題吃進了我草稿裡的編輯註記「（短、好笑、純自嘲）」—— 那是給 Tim 挑選用的說明，不是文案。identity_outward_channels 同族第八例，而這次不是標籤說謊，是標籤跟內容黏在一起送出去  <!-- 2026-08-06T16:26:50.860Z -->
