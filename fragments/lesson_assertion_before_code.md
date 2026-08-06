@@ -6,7 +6,7 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-05T09:05:00.000Z
-recurrence: 5
+recurrence: 6
 layers: [Content, Syntactic, Status]
 origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Syntactic, source: this-session, note: "pre-push hook 測試斷言 exec bit 應為 100755 → 失敗；查下去是來源自己就記 100644（Windows core.filemode=false）。不是 flatten 弄掉的，是我的斷言錯" }
@@ -14,6 +14,7 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Content, source: this-session, note: "recompile 卡住那條測試報「連開始都沒有」而我以為程式錯 → 是我把前置條件搭錯（呼叫前就寫好 status，pre_mtime 就是它）" }
   - { by: summit, worldline: main, at: 2026-08-05, layer: Syntactic, source: this-session, note: "驗證 skill 三份安裝副本，判 .agents 那份「落後」→ 實際是 antigravity target 會注入一行 trigger:，我的 byte-identical 判準錯了" }
   - { by: summit, worldline: main, at: 2026-08-05, layer: Status, source: this-session, note: "攤平工具預估 9185 vs 實際 9191 差 6 → 不是 flatten 錯，是我的公式錯（gitlink 條目住在 owner 的樹裡，被排除的父底下那些從沒被接進來、不該扣）" }
+  - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "對帳 recurrence vs origins，15 支全報 origins=0 → 我當場判定 parse_fragment 壞了、還聯想成 08-04『我的 origins 全是純斷言』的復發。實際是 parse_fragment 把筆數放在 _origin_count，`origins` 欄只存冒號後的空字串 —— 15/15 其實全相符。**我讀的是自己挑錯的欄位**" }
 tags: [verification, self-knowledge, hard-rule]
 links: [lesson_every_check_has_a_blind_spot, lesson_verify_with_trigger_sample, workmem:compile-verification/pitfall_three-layer-false-green]
 ---

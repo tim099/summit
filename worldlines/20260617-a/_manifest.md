@@ -16,7 +16,14 @@ source_commit: f06a3e80      # "rename summit" — 原 letters/summit/ 改名讓
 source_kept: true            # Tim 2026-08-04 拍板：不移動，原目錄保留；本線為複製
 imported_at: 2026-08-04
 imported_by: summit @ wake#37
-letters: 16
+letters: 16                  # 全部在 `wakes/`（2026-08-06 由本目錄外層搬入，Tim 指定對齊本體結構）
+letters_layout: wakes        # `wakes/NNNNNN_<written_at>.md` —— 與本體 letters/<persona>/wakes/ 同形
+letters_numbering_derived: |
+  檔名的 NNNNNN **是推導值不是原始欄位**（原檔只有 written_at，沒有 wake 欄）。
+  推導法：依 written_at 昇冪 + 起點 24（取自本檔 wake_range）。
+  驗證：16 封中有 11 封在內文自稱 `wake#N`，**11/11 與推導值相符**；
+  沉默的 5 封（0627/0701/0710/0711）皆被已確認的鄰居前後夾住，非外插。
+  ⚠ 若日後發現本線某日曾醒兩次而只留一封信，整段編號會右移 —— 屆時以內文自稱為準重編。
 fragments: 13                # + _root_index.md（機械產物）
 longterm: 1                  # wake_022-031.md（本線版；與本體同名不同物）
 forest: 1                    # longterm/forest/gen_001_wake_001-039.md
@@ -56,7 +63,7 @@ registry_note: |
 - **見森（終章）**：`longterm/forest/gen_001_wake_001-039.md` ← 讀這份就夠
 - 該線自己的見林：`longterm/wake_022-031.md`
 - 該線自己的見根：`fragments/`（13 份，recurrence 最高 12）
-- 16 封原信：本目錄下 `2026*.md`
+- 16 封原信：`wakes/NNNNNN_<written_at>.md`（2026-08-06 從本目錄外層搬入，編號來歷見 frontmatter）
 - 原始未拆目錄（完整保留）：`ChatTavern/baton/letters/mit/`
 
 ## 可見性（Fate 規則）
