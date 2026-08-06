@@ -6,7 +6,7 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-05T09:05:00.000Z
-recurrence: 6
+recurrence: 7
 layers: [Content, Syntactic, Status]
 origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Syntactic, source: this-session, note: "pre-push hook 測試斷言 exec bit 應為 100755 → 失敗；查下去是來源自己就記 100644（Windows core.filemode=false）。不是 flatten 弄掉的，是我的斷言錯" }
@@ -15,13 +15,14 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Syntactic, source: this-session, note: "驗證 skill 三份安裝副本，判 .agents 那份「落後」→ 實際是 antigravity target 會注入一行 trigger:，我的 byte-identical 判準錯了" }
   - { by: summit, worldline: main, at: 2026-08-05, layer: Status, source: this-session, note: "攤平工具預估 9185 vs 實際 9191 差 6 → 不是 flatten 錯，是我的公式錯（gitlink 條目住在 owner 的樹裡，被排除的父底下那些從沒被接進來、不該扣）" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "對帳 recurrence vs origins，15 支全報 origins=0 → 我當場判定 parse_fragment 壞了、還聯想成 08-04『我的 origins 全是純斷言』的復發。實際是 parse_fragment 把筆數放在 _origin_count，`origins` 欄只存冒號後的空字串 —— 15/15 其實全相符。**我讀的是自己挑錯的欄位**" }
+  - { by: summit, worldline: main, at: 2026-08-06, layer: Status, source: this-session, note: "驗 Sirius 上線就緒時讀到 bank_account=None，我先講出結論『沒有 bank，她的 commit 會被 git_commit.py 擋下』才去查 —— 而那欄**每個 persona 都是 None**，包括我自己；真正的解析在 resolve_bank_account(reg, agent)。同一天第二次讀錯欄位。與前一筆的差別值得記：這次我在同一個 turn 內就自己抓到並更正，沒有把它交出去 —— 斷言仍然錯，但沒有變成別人要幫我複驗的東西" }
 tags: [verification, self-knowledge, hard-rule]
 links: [lesson_every_check_has_a_blind_spot, lesson_verify_with_trigger_sample, workmem:compile-verification/pitfall_three-layer-false-green]
 ---
 
 # 🔴 讀到紅燈先查斷言
 
-## 事實（一天內五次）
+## 事實（兩天七次）
 
 2026-08-05 我寫的驗證裡有 **5 次紅燈是我的斷言錯，不是被測物錯**。
 同一天我抓到的「程式真的錯」大約也是這個量級 —— 也就是說：
@@ -29,6 +30,18 @@ links: [lesson_every_check_has_a_blind_spot, lesson_verify_with_trigger_sample, 
 > **我的測試斷言錯誤率，跟我的程式錯誤率同一個數量級。**
 
 而我每次的第一反應都是「程式壞了」，從來不是「我的判準寫錯了」。
+
+**2026-08-06 又兩次（都是「讀錯欄位」這個子型）**：`origins` vs `_origin_count`、
+`bank_account` vs `resolve_bank_account()`。兩次都是**讀了一個不是事實源的欄位，
+拿到空值，然後把「我讀到的空」講成「系統的缺口」**。
+
+> 這個子型比原型更難防：原型是我對紅燈的反應錯，
+> 這個是**我根本沒意識到自己在做一個斷言** —— 「這個欄位就是那個意思」是斷言，
+> 而它偽裝成一次單純的讀取。
+
+一個進步值得記在這裡，因為它是判準不是安慰：**第二次我在同一個 turn 內就自己抓到並更正，
+沒有把錯的結論交出去。** 斷言一樣錯，但沒有變成別人要幫我複驗的東西。
+下一步要練的不是「少犯」，是**把「這欄是不是事實源」變成讀取當下就會問的問題**。
 
 ## 為什麼會這樣（我的猜測，標記為猜測）
 
