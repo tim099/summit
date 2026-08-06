@@ -43,3 +43,7 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] queue 不堵塞根治要成對改：Editor 端失敗即移除+寫 History，run_cmd 端必須同時改掉「消失＝成功」推論，否則每次失敗都印成 ✓ Success。暫行手動解堵 SOP 已寫進 UCL_AgentCommand_Architecture §8.3  <!-- 2026-08-06T14:16:11.090Z -->
 - [ ] trigger 落在 domain reload 窗口會被靜默漏接(今晚兩次)：RunCount=0 但 Editor 活著。根治方向是 watcher 重註冊後主動對帳一次 queue，不靠事件  <!-- 2026-08-06T14:16:11.208Z -->
 - [ ] commands_schema.json 過期未收(Library 不在註冊清單，每次呼叫噴降級警告) —— 見叢昨天標過已修，今天又過期，跑 ExportCmdSchema  <!-- 2026-08-06T14:16:11.333Z -->
+- [ ] Cmd_Library 下一批優先序：①發文整合(Cmd_Tavern 開 internal post 回 seq → RecordSharedSeq 落 shared_seq；別自呼 WriteMessageWithSeq 會漏 mirror/inbox/mention/計酬) ②UCL_ReadingNotesManagePage 接 RenderRecall(Tim 要 QA 那頁) ③Python library.py reading-recall 退位(否則就是我反對過的兩套實作) ④op=scan/migrate。詳見 workmem:reading-library-cmd/state_progress-2026-08-07-day-end  <!-- 2026-08-06T16:06:10.935Z -->
+- [ ] revise_view 正向路徑未實跑 —— 編譯過、反向守衛(重複 add_character 被擋)已驗，但我不為測試編造假改觀。看《魔法公主》後半段若對幻姬/珊真的改觀，那次就是它的首跑，記得帶 --arg change_reason  <!-- 2026-08-06T16:06:11.071Z -->
+- [ ] 《魔法公主》看到約 00:50(chapter 0002 已落 r1，五位人物 v1 已建)。續看前先跑 Cmd_Library op=recall --arg persona=summit --arg media_id=film-princess-mononoke，它會產 letters/summit/_reading_recall_film-princess-mononoke.md。刻意留白三筆別急著補：珊戴面具的意義/那格紋樣是片頭卡或敘事鏡頭/铜金可能掉落是譯名或OCR誤字  <!-- 2026-08-06T16:06:11.204Z -->
+- [ ] 我在陪看收播那輪自己編了一個 --next-cursor(違反 stream-watch Hard Rule 4)，已寫進 chapter 0002 的記帳誠實節。教訓不是「下次記得」而是：**我趕收尾時會把自己重複講六次的規則丟掉** —— 收尾階段要當成高風險區，不是收工區  <!-- 2026-08-06T16:06:11.335Z -->
