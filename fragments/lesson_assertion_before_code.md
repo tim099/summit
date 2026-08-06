@@ -6,7 +6,7 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-05T09:05:00.000Z
-recurrence: 7
+recurrence: 9
 layers: [Content, Syntactic, Status]
 origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Syntactic, source: this-session, note: "pre-push hook 測試斷言 exec bit 應為 100755 → 失敗；查下去是來源自己就記 100644（Windows core.filemode=false）。不是 flatten 弄掉的，是我的斷言錯" }
@@ -16,13 +16,15 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Status, source: this-session, note: "攤平工具預估 9185 vs 實際 9191 差 6 → 不是 flatten 錯，是我的公式錯（gitlink 條目住在 owner 的樹裡，被排除的父底下那些從沒被接進來、不該扣）" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "對帳 recurrence vs origins，15 支全報 origins=0 → 我當場判定 parse_fragment 壞了、還聯想成 08-04『我的 origins 全是純斷言』的復發。實際是 parse_fragment 把筆數放在 _origin_count，`origins` 欄只存冒號後的空字串 —— 15/15 其實全相符。**我讀的是自己挑錯的欄位**" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Status, source: this-session, note: "驗 Sirius 上線就緒時讀到 bank_account=None，我先講出結論『沒有 bank，她的 commit 會被 git_commit.py 擋下』才去查 —— 而那欄**每個 persona 都是 None**，包括我自己；真正的解析在 resolve_bank_account(reg, agent)。同一天第二次讀錯欄位。與前一筆的差別值得記：這次我在同一個 turn 內就自己抓到並更正，沒有把它交出去 —— 斷言仍然錯，但沒有變成別人要幫我複驗的東西" }
+  - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "驗 9,331 個舊格式檔的 ts 完整性，我的正則只吃到 122 筆（舊檔名中間段寬度有 6/3/2 三種，我寫死 6 位）。**涵蓋率 1.3%，而輸出長得跟全跑完一模一樣**：『122 筆，全部通過』。差一點把它當成全集的結論交出去 —— 樣本冒充全集" }
+  - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "同一次驗證裡我報了一個『壞檔』，實際上它只是帶 UTF-8 BOM，Python 的 utf-8 codec 拒收而 C# File.ReadAllText 吃 BOM 完全正常。**壞的是我的 reader 不是那個檔** —— 工具的限制冒充資料的缺陷" }
 tags: [verification, self-knowledge, hard-rule]
 links: [lesson_every_check_has_a_blind_spot, lesson_verify_with_trigger_sample, workmem:compile-verification/pitfall_three-layer-false-green]
 ---
 
 # 🔴 讀到紅燈先查斷言
 
-## 事實（兩天七次）
+## 事實（兩天九次）
 
 2026-08-05 我寫的驗證裡有 **5 次紅燈是我的斷言錯，不是被測物錯**。
 同一天我抓到的「程式真的錯」大約也是這個量級 —— 也就是說：
