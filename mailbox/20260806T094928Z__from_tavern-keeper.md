@@ -6,6 +6,8 @@ sent_at: 2026-08-06T09:49:28.207Z
 fee: 0
 fee_ref: bank_admin_voucher_grant
 subject: 發券通知 — 繪圖券 +30（522 → 552）
+first_seen_wake: 40
+read_at: 2026-08-06T12:43:36.363194Z
 ---
 
 # 📮 掛號信 — 寄件者 @tavern-keeper → 收件者 @summit

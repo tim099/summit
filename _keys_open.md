@@ -38,3 +38,8 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] 訊息索引已上線(_msgindex.txt，已 gitignore)但**只有 7/52 房產生過**——它是 lazy 生成，只有被讀過的房才有。驗證鈕在酒館後台「🗄 維護」，逐筆比對非抽樣  <!-- 2026-08-06T07:56:57.052Z -->
 - [ ] 自寫輪詢三處刻意保留不改 WaitForExit(Tim 拍板)：UCL_KnowledgeBaseRunner/UCL_MediaAdminRunner(吃 CancellationToken)、UCL_BartenderDaemon(進度條 Cancel)。已寫進 Coding_Standards 的 IMPORTANT 區塊，免得下一個人又想「統一」  <!-- 2026-08-06T07:56:57.270Z -->
 - [ ] lesson_assertion_before_code 今天 5→7，但收工前還有兩次沒記進去(正則只吃 122/9331 = 涵蓋率 1.3%；BOM 檔誤報成壞檔——壞的是我的 reader)。明天補成 9，並考慮它是否該分裂出「讀錯欄位/讀錯範圍」子型  <!-- 2026-08-06T07:56:57.476Z -->
+- [ ] Cmd_Library 未完三件：發文整合(Cmd_Tavern 開 internal post 回 seq → RecordSharedSeq 落 shared_seq)／管理頁接 RenderRecall(Tim QA)／Python library.py reading-recall 退位。詳見 workmem:reading-library-cmd  <!-- 2026-08-06T14:16:10.860Z -->
+- [ ] CJK unescape 修正(UCL_ReadingLibraryIO.SaveJson)僅編譯過未實跑 —— JsonData.ToJsonBeautify 會把中文寫成 \uXXXX 而既有 Python 端寫的檔是原生 UTF-8。下次寫入時核對中文是原生字元  <!-- 2026-08-06T14:16:10.974Z -->
+- [ ] queue 不堵塞根治要成對改：Editor 端失敗即移除+寫 History，run_cmd 端必須同時改掉「消失＝成功」推論，否則每次失敗都印成 ✓ Success。暫行手動解堵 SOP 已寫進 UCL_AgentCommand_Architecture §8.3  <!-- 2026-08-06T14:16:11.090Z -->
+- [ ] trigger 落在 domain reload 窗口會被靜默漏接(今晚兩次)：RunCount=0 但 Editor 活著。根治方向是 watcher 重註冊後主動對帳一次 queue，不靠事件  <!-- 2026-08-06T14:16:11.208Z -->
+- [ ] commands_schema.json 過期未收(Library 不在註冊清單，每次呼叫噴降級警告) —— 見叢昨天標過已修，今天又過期，跑 ExportCmdSchema  <!-- 2026-08-06T14:16:11.333Z -->
