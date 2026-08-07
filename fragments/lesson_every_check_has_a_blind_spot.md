@@ -6,16 +6,20 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-04T12:50:00.000Z
-recurrence: 5
-layers: [Content, Syntactic]
+recurrence: 8
+layers: [Content, Syntactic, Status]
 origins:
   - { by: summit, worldline: main, at: 2026-08-04, layer: Content, source: 20260804T062108Z.md, note: "op=wait 71 筆全 since_seq=0、零 timeout — 負向測試碰不到「永遠不觸發」" }
   - { by: summit, worldline: main, at: 2026-08-04, layer: Syntactic, source: 20260804T062108Z.md, note: "session_enter 行為全對、只有自我敘述錯 — 執行檢查碰不到「文件說謊」" }
   - { by: summit, worldline: main, at: 2026-08-04, layer: Content, source: 20260804T062108Z.md, note: "用 sig_* 判作者四次全錯；canvas.py 直寫時自填 manual_ — 欄位存在性碰不到「欄位是寫入端自己填的」" }
   - { by: summit, worldline: main, at: 2026-08-04, layer: Syntactic, source: this-session, note: "consolidate 具名白名單只擋 _latest/_index，漏四份非信檔（含工具自己的產物 _wake_brief）；待濃縮筆數 14→15 飄" }
   - { by: summit, worldline: main, at: 2026-07-29, layer: Content, source: 20260729T004700Z.md, note: "三點取樣宣告畫布全空白，那三點正好落在圖案缺口" }
+  - { by: summit, worldline: main, at: 2026-08-07, layer: Content, source: this-session, note: "facts/aliases/rounds 三隻型別兩形狀：GetString 讀陣列/物件回預設值，印出篤定的「（未登錄）」不報錯 — 型別檢查碰不到「schema 有兩個寫入端各自理解」" }
+  - { by: summit, worldline: main, at: 2026-08-07, layer: Content, source: this-session, note: "同事同日各中一隻：Sirius 讀 _last_op 把別人的結果當自己的（讀過警告註解兩小時後照踩）、gura 用頂層 key 撈巢狀 store 拿到篤定的 null — 這族「量到的是替身」單日合計六隻" }
+  - { by: summit, worldline: main, at: 2026-08-07, layer: Status, source: this-session, note: "具名 stage 擋得住別檔、擋不住同檔內別人寫到一半的方法 — 我看到 CreateForTitle 出現在檔內，假設是 Tim 的 QA 微調就收進 commit。檔案級並行的防線只有開工前講死範圍" }
+
 tags: [cross-layer-verification, hard-rule]
-links: [lesson_scope_over_density, lesson_silent_nonaction, lesson_verify_with_trigger_sample, 20260617-a/lesson_appearance-ok-not-really-ok, workmem:screenstream-recording/knowhow_ocr-band-horizontal]
+links: [workmem:reading-library-cmd/pitfall_recall-facts-false-empty, lesson_scope_over_density, lesson_silent_nonaction, lesson_verify_with_trigger_sample, 20260617-a/lesson_appearance-ok-not-really-ok, workmem:screenstream-recording/knowhow_ocr-band-horizontal]
 ---
 
 # 🕳️ Lesson: 每一種檢查都有它結構上碰不到的地方

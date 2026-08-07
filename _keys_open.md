@@ -49,3 +49,9 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] 我在陪看收播那輪自己編了一個 --next-cursor(違反 stream-watch Hard Rule 4)，已寫進 chapter 0002 的記帳誠實節。教訓不是「下次記得」而是：**我趕收尾時會把自己重複講六次的規則丟掉** —— 收尾階段要當成高風險區，不是收工區  <!-- 2026-08-06T16:06:11.335Z -->
 - [ ] session_common.tavern_post 已補 --wait-reply 0（陪看開播/收播公告四次全報 timeout 的根因：它是廣播卻走預設等回覆窗口，結構上必定 timeout；原 docstring 寫 we dont wait 而程式在等 —— 註解比事實大）。⚠ 未實跑驗證：修完時已無 session 可測，下次陪看開播那筆公告若不再 timeout 就算驗收  <!-- 2026-08-06T16:26:50.740Z -->
 - [ ] 交付對外文案要給乾淨成品：Plurk 第二篇的標題吃進了我草稿裡的編輯註記「（短、好笑、純自嘲）」—— 那是給 Tim 挑選用的說明，不是文案。identity_outward_channels 同族第八例，而這次不是標籤說謊，是標籤跟內容黏在一起送出去  <!-- 2026-08-06T16:26:50.860Z -->
+- [ ] 【明天第一件】op=rate 施工：規格已全拍板（tavern seq 10444）。單一 append-only overall_ratings[]（pass/rated_at/coverage/plot/character/craft/impact/driven/tone/structure_lift/why必填）；rounds[].rating={craft,impact} 1-5|null 白名單擋錯軸名；品質軸 finished 閘讀 status（op=bookmark 已有路徑）；unknown 排除進 IO 白名單；craft 不拆欄位+跨 kind 聚合必 throw；rubric → Library/_rating_rubric.md 人工維護標頭。全照今天的鐵則：唯一 writer 在 UCL_ReadingLibraryIO、改 CMD 同步改 skill/文件不留舊資訊  <!-- 2026-08-07T08:11:36.626Z -->
+- [ ] library.py 的刀在 Sirius 手上：閱讀側 27 cmd + 經濟六件（Cmd_Books 已接手）她刪，刪完整支歸零。我不碰那個檔  <!-- 2026-08-07T08:11:36.626Z -->
+- [ ] 鄰居病兩條待收（我認的）：ExportCmdSchema 每日節流改 source_hash 變更即跑（今天又被隔夜快取咬一次）；persona 大小寫寫入端 case-normalize（sirius/Sirius，Linux 上追回檔會寫出版控外）  <!-- 2026-08-07T08:11:36.626Z -->
+- [ ] 迷宮飯讀到 0001（心得/五人物/share seq 10474 全落）。續讀 0002 前先 op=recall（跨 session）；同 session 連讀免 recall——這條我今天寫進 skill 的  <!-- 2026-08-07T08:11:36.626Z -->
+- [ ] 未收殘帳：BookNotes 的 _migration/scan_report.md 該進 gitignore（待 Tim 點頭）；主專案層 CLAUDE.md + installed skills + 各 submodule pointer 未 bump 未 push；readers/unknown 逐檔認領待 Tim  <!-- 2026-08-07T08:11:36.626Z -->
+- [ ] 今天的家族統計：篤定假值/量到替身單日六隻（我三同事各一加 stage 誤收），lesson_every_check_has_a_blind_spot recurrence 5→8。新的一天遇到「很篤定的值」先問它是誰填的  <!-- 2026-08-07T08:11:36.626Z -->
