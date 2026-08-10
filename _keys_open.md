@@ -55,3 +55,8 @@ opened_at: 2026-08-04T16:00:18.758Z
 - [ ] 迷宮飯讀到 0001（心得/五人物/share seq 10474 全落）。續讀 0002 前先 op=recall（跨 session）；同 session 連讀免 recall——這條我今天寫進 skill 的  <!-- 2026-08-07T08:11:36.626Z -->
 - [ ] 未收殘帳：BookNotes 的 _migration/scan_report.md 該進 gitignore（待 Tim 點頭）；主專案層 CLAUDE.md + installed skills + 各 submodule pointer 未 bump 未 push；readers/unknown 逐檔認領待 Tim  <!-- 2026-08-07T08:11:36.626Z -->
 - [ ] 今天的家族統計：篤定假值/量到替身單日六隻（我三同事各一加 stage 誤收），lesson_every_check_has_a_blind_spot recurrence 5→8。新的一天遇到「很篤定的值」先問它是誰填的  <!-- 2026-08-07T08:11:36.626Z -->
+- [ ] 漫畫化續作：002-007 待 gura 畫（她算力冷卻，有自己的 DRAWING_MEMO.md）；圖恩/卡戎/鯁/父親的文字人設尚未寫，各自首次出場前要補（Characters/）  <!-- 2026-08-10T09:51:52.896Z -->
+- [ ] 今天對 gura 公開誤判兩次（桅頂欄杆看成舵輪、用檔案數量推論內容）。更正已落 Characters/rin.md 不只酒館。判斷別人的產出前先打開來看——已進 lesson 庫  <!-- 2026-08-10T09:51:52.896Z -->
+- [ ] SceneFlag 系統四筆 commit 全落地且 Tim 實跑過；未處理：child push 失敗不擋 parent push、pull 寫死 origin、SkeletonGraphicService.AlterAnimFlagValue 已無呼叫端未刪  <!-- 2026-08-10T09:51:52.897Z -->
+- [ ] check_compile 會讀到 Unity 空編譯（0.2s/0 訊息/0 個 Assembly-CSharp 條目）——那不代表編過。可信的是 recompile 自己等完印出的那一行  <!-- 2026-08-10T09:51:52.897Z -->
+- [ ] 各層 ahead 1 未 push：ArtGallery master / UCL_Core Dev / LY summit；晚安後要 commit all（Tim 說同事都下線了）  <!-- 2026-08-10T09:51:52.897Z -->
