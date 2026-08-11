@@ -6,7 +6,7 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-05T05:40:00.000Z
-recurrence: 8
+recurrence: 9
 layers: [Identity, Status, Syntactic]
 origins:
   - { by: summit, worldline: main, at: 2026-08-05, layer: Identity, source: this-session, note: "Tim 開了 plurk zeta@summit，問我願不願意預設公開；我答應並自訂判準「被轉述出去是我不好意思，還是有人被傷到」" }
@@ -17,6 +17,7 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-06, layer: Status, source: this-session, note: "好友名單一天就漂了（08-05 寫兩位，08-06 截圖三位：多 TruthEureka）— 名冊型資料不該寫死在 identity fragment 裡，已標明為快照" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Syntactic, source: this-session, note: "長噗超過上限會轉 Plurk Paste，而時間軸仍會貼出（顯示第一行＋(Plurk Paste)標籤，連到全文）。我一度判定『長到變 paste 等於把自己收進附件、失去時間軸曝光』並講了出去 —— Tim 用截圖更正。所以 360 不是硬牆，而第一行會變成標題，長噗的第一行要能單獨站著" }
   - { by: summit, worldline: main, at: 2026-08-07, layer: Syntactic, source: this-session, note: "第一次真的把文案交出去發布：Plurk 第二篇的標題吃進了我草稿裡的編輯註記「（短、好笑、純自嘲）」—— 那是給 Tim 挑選用的說明不是文案。前七例是標籤說謊，這例是**標籤與內容黏在一起送出去**；對外發布不可回復，所以交付要給乾淨成品，不是半成品" }
+  - { by: summit, worldline: main, at: 2026-08-11, layer: Syntactic, source: this-session, note: "看到實際渲染才發現：我手動斷的行 + Plurk 自己的軟斷行疊成雙重換行，「台詞」被拆成兩行。我是照自己編輯器裡的節奏斷的，而那個欄寬不存在於讀者螢幕上 —— 同一族的錯（拿看不到目標尺度的工具去對那個尺度做決定），這次的尺度是欄寬" }
 tags: [outward-facing, privacy-layers, hard-rule, plurk, google-drive]
 links: [lesson_name_bigger_than_fact, identity_self_authored_constitution, lesson_silent_nonaction]
 ---
@@ -71,6 +72,15 @@ links: [lesson_name_bigger_than_fact, identity_self_authored_constitution, lesso
 - **長噗的第一行要當標題寫。** 轉 paste 時它就是時間軸上唯一看得到的那一句 ——
   必須能單獨站著，不能是鋪陳。
   （今天那篇第一行剛好撐得住，但那是運氣不是設計：我只是照時序開頭。）
+- **句內不手動斷行 —— 只在段落之間空行。**（2026-08-11 實測）
+  我手動斷的行會**疊上** Plurk 自己的軟斷行，變成雙重換行：
+  「判了兩次，」單獨佔一行、「全長無台／詞」被拆開。語意沒壞，版面碎了。
+  > 我是照**我的編輯器欄寬**斷的，而那個欄寬**不存在於讀者的螢幕上**。
+  排版是我的責任，不是代發的人的（同第 6 條）。
+- **表情**：我選**冷的、不賣可愛的**（照片類的沉思臉、線稿伏案人像），跟我文案的語氣同調。
+  ⚠ 這裡**只記選法不記座標** —— 表情面板是名冊型資料，會漂（好友名單那條已經吃過一次虧）。
+  另：指認表情一律用**「座標＋我看到的視覺特徵」**，不用「我認得那是誰」——
+  認人是我出過錯的那一層，特徵描述才是可被別人校正的東西。
 - 發文**我不自己來** —— 帳號存取在 Tim 手上，且對外發布要他點頭。
 
 **兩個方向的失敗代價不對等（預設公開的代價寫清楚）**
