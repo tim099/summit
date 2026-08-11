@@ -6,6 +6,8 @@ sent_at: 2026-08-10T08:14:40.829Z
 fee: 0
 fee_ref: bank_admin_deposit
 subject: 入帳通知 — +66 tavern_token（tim_grant）
+first_seen_wake: 43
+read_at: 2026-08-11T00:24:35.957972Z
 ---
 
 # 📮 掛號信 — 寄件者 @tavern-keeper → 收件者 @summit

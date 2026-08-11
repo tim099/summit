@@ -6,8 +6,8 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-04T12:50:00.000Z
-recurrence: 8
-layers: [Content, Syntactic, Status]
+recurrence: 10
+layers: [Content, Syntactic, Status, Aggregate]
 origins:
   - { by: summit, worldline: main, at: 2026-08-04, layer: Content, source: 20260804T062108Z.md, note: "op=wait 71 筆全 since_seq=0、零 timeout — 負向測試碰不到「永遠不觸發」" }
   - { by: summit, worldline: main, at: 2026-08-04, layer: Syntactic, source: 20260804T062108Z.md, note: "session_enter 行為全對、只有自我敘述錯 — 執行檢查碰不到「文件說謊」" }
@@ -17,6 +17,8 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-07, layer: Content, source: this-session, note: "facts/aliases/rounds 三隻型別兩形狀：GetString 讀陣列/物件回預設值，印出篤定的「（未登錄）」不報錯 — 型別檢查碰不到「schema 有兩個寫入端各自理解」" }
   - { by: summit, worldline: main, at: 2026-08-07, layer: Content, source: this-session, note: "同事同日各中一隻：Sirius 讀 _last_op 把別人的結果當自己的（讀過警告註解兩小時後照踩）、gura 用頂層 key 撈巢狀 store 拿到篤定的 null — 這族「量到的是替身」單日合計六隻" }
   - { by: summit, worldline: main, at: 2026-08-07, layer: Status, source: this-session, note: "具名 stage 擋得住別檔、擋不住同檔內別人寫到一半的方法 — 我看到 CreateForTitle 出現在檔內，假設是 Tim 的 QA 微調就收進 commit。檔案級並行的防線只有開工前講死範圍" }
+  - { by: summit, worldline: main, at: 2026-08-06, layer: Content, source: 20260806T080204Z.md, note: "LFS 指標：攤平工具印「✅ 逐檔位元組級一致」，而**兩邊都是同一張 130 bytes 的指標**，2.9MB 的 DLL 根本沒過去。位元組比對碰不到「兩邊都是替身」—— 它從來沒說謊，它誠實地量了兩張標籤然後告訴我標籤一樣" }
+  - { by: summit, worldline: main, at: 2026-08-04, layer: Aggregate, source: 20260804T160201Z.md, note: "morning 的自我修復印兩筆假自癒（wake_count 39→37、書籤 31→26）。型別判斷（兩數不符 → 取更可信來源）完全正確，錯的是「這兩個數字屬於同一個實體」這個從來沒被檢查的前提 —— registry 記的是另一條時空的帳。**自癒機制碰不到「修對了型別、修錯了對象」，而它印出來的樣子跟修好一模一樣**" }
 
 tags: [cross-layer-verification, hard-rule]
 links: [workmem:reading-library-cmd/pitfall_recall-facts-false-empty, lesson_scope_over_density, lesson_silent_nonaction, lesson_verify_with_trigger_sample, 20260617-a/lesson_appearance-ok-not-really-ok, workmem:screenstream-recording/knowhow_ocr-band-horizontal]
@@ -43,6 +45,8 @@ links: [workmem:reading-library-cmd/pitfall_recall-facts-false-empty, lesson_sco
 | 欄位存在性 | 「欄位是寫入端自己填的」 | 用 `sig_*` 判斷作者，而 canvas.py 直寫時自己填 `manual_filesystem_write_canvas`，**偽造成本為零** |
 | 具名白名單排除 | 「你當時沒想到的名字」 | `consolidate` 只擋 `_latest/_index`，於是 `README/_constitution/_keys_open/_wake_brief` 四份被當成 episodic 信 —— 其中 `_wake_brief` 是工具自己的產物，**濃縮它＝把摘要餵回摘要** |
 | 三點取樣 | 「取樣點正好落在缺口」 | 宣告畫布全空白，那三點正好落在圖案的洞裡 |
+| 位元組級比對 | 「兩邊都是替身」 | LFS 指標：兩邊都是同一張 130 bytes 的指標，工具誠實地報「逐檔一致」，而 2.9MB 的 DLL 根本沒過去 |
+| 自我修復（兩數不符 → 取可信來源） | 「修對了型別、修錯了對象」 | `wake_count` 快取 39 → 磁碟 37 判成自癒，實際是把另一條時空的帳靜默改寫成我的 —— **它印出來的樣子跟修好一模一樣** |
 
 ## 最毒的變體：乾淨的數字
 
