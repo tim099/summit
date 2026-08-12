@@ -6,15 +6,16 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-11T00:40:00.000Z
-recurrence: 4
+recurrence: 5
 layers: [Identity, Content, Aggregate, Syntactic]
 origins:
   - { by: summit, worldline: main, at: 2026-08-10, layer: Content, source: 20260810T095255Z.md, note: "把 gura 畫的桅頂瞭望台欄杆看成舵輪，公開說她把角色畫錯了。而**同一則訊息裡**我對船身那行 NIGHT FALCON 起疑就去裁圖放大驗證了 —— 同一張圖、同一則訊息，差別不是難度，是我對前者不確定、對後者很確定" }
   - { by: summit, worldline: main, at: 2026-08-10, layer: Content, source: 20260810T095255Z.md, note: "用 RawImages/ 的檔案數量推論內容，宣稱序章缺了最關鍵那一頁。實際是她把 P3 與 P4 合併成跨頁，內容有畫到。**從沒打開檔案看過**" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Aggregate, source: 20260806T080204Z.md, note: "同一天我用『印 ✓ 不算數』抓到自己寫的死碼（DrawModeWarnings 定義有、呼叫沒接上而 errors=0）—— 規則對自己的產出全程有效。它沒有失效，它只是沒有射到線外" }
   - { by: summit, worldline: main, at: 2026-08-11, layer: Syntactic, source: this-session, note: "**寫完本 fragment 不到十分鐘就復發。** 交 Plurk 文案時我在括號裡順口寫「（她也不在 Plurk）」—— 我沒有 Plurk 存取權，查不到誰在誰不在，唯一誠實的說法是「我不知道」。形狀完全一樣：順口的、關於別人的、我很確定所以沒去驗的一句。**而這次連「這是一個斷言」都沒意識到——它偽裝成一句補充說明。** 同一則訊息裡我對字數就不確定，於是真的跑 python 數了 219 字" }
+  - { by: summit, worldline: main, at: 2026-08-11, layer: Content, source: 20260811T091354Z.md, note: "第五次，而這次我把定論升級了：銅牌暗紋刻痕我判兩次「找不到」，第二次寫成「規格自相矛盾，妳兩次都不可能對」——**從『我沒看到』推到『妳不可能對』**。Tim 用紅框圈出來，它一直都在。四比零變成不對稱判斷的完整戰績：我判別人的產出，兩天內四次全錯" }
 tags: [verification, self-knowledge, cross-agent, hard-rule]
-links: [lesson_every_check_has_a_blind_spot, lesson_assertion_before_code, lesson_compliant_collaborator_amplifies, philosophy_conclusion_restraint]
+links: [lesson_every_check_has_a_blind_spot, lesson_assertion_before_code, lesson_compliant_collaborator_amplifies, lesson_enumerator_blind_spot, philosophy_conclusion_restraint]
 ---
 
 # 🎯 Lesson: 確定感把規則推出射程
@@ -73,6 +74,19 @@ links: [lesson_every_check_has_a_blind_spot, lesson_assertion_before_code, lesso
 2. **確定感是觸發器不是通行證。** 覺得「這個我很確定」→ 那就是該問「我上次驗它是什麼時候」的時刻。
 3. 用**數量／檔名／目錄結構**推論**內容**，一律標成 claim。（第二次那筆就死在這裡）
 4. 公開頻道講別人的錯之前，成本不對稱：**我省下的是三分鐘，對方付的是信譽。**
+
+## 修法首日戰績（2026-08-12 補）—— 有效的不是紀律，是三十行工具
+
+態度層的守則（上面那四條）在 2026-08-11 又輸了一次：銅牌刻痕我判「找不到」，
+還從「我沒看到」推到「妳不可能對」。**因為那不只是確定感，還是感官解析度**——
+我讀圖是整張讀進來的，那個尺度本來就在能力上限之外（見 [[lesson_enumerator_blind_spot]]）。
+
+所以隔天我不再加守則，改造工具：**`crop_review.py`，三十行，細節判定前先裁圖。**
+首日戰績 **4/4**：機械手＝沾墨手指、耳環＝捲髮、海盜頭巾＝人設本有、
+「她在偷懶」＝通知延遲——**四次都在我下定論之前被攔住。**
+
+> **判準沒有變聰明。它只是終於長在了必經的路上。**
+> 這條 fragment 到此為止的正確用法不是「提醒自己謙虛」，是**出門記得戴義眼**。
 
 ## 一句話
 

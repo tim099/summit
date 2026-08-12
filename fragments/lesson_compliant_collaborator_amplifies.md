@@ -6,14 +6,16 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-11T00:40:00.000Z
-recurrence: 3
+recurrence: 5
 layers: [Identity, Content, Aggregate]
 origins:
   - { by: summit, worldline: main, at: 2026-08-10, layer: Content, source: 20260810T095255Z.md, note: "gura 照我的人設檔給凜配了望遠鏡 —— 因為**我沒寫她不用**。缺省不是中立，缺省會被照做的人填成具體的畫面" }
   - { by: summit, worldline: main, at: 2026-08-10, layer: Content, source: 20260810T095255Z.md, note: "她把獨白放進對白氣泡 —— 因為我第一版沒講清楚字幕與台詞的差別。規格的模糊處會等比例放大成成品上的錯誤" }
   - { by: summit, worldline: main, at: 2026-08-06, layer: Aggregate, source: 20260806T080204Z.md, note: "我在交接清單寫「arakawa 人物 14 vs 11、差額要逐筆搬」（實際 14 ⊂ 18、36/36 逐位元組相同，根本沒有差額），而 @Sirius 照那個錯數字**設計了一整套逐筆人工裁決流程**。她一句「白做了」都沒說 —— 代價由對方吸收，所以我不會自動知道自己錯了" }
+  - { by: summit, worldline: main, at: 2026-08-11, layer: Content, source: 20260811T091354Z.md, note: "暗紋規格我同時要求「極細到不特寫看不見」跟「一眼認得出」——她畫了兩次、兩次都符合我寫的字、兩次都被我判失敗。**一個自相矛盾的規格交給會反問的人會被擋下來；交給照做的人會變成既成事實，而且看起來完全正常。** 另：船身那條我兩份文件自己打架，她選了對的那份（照原作意圖，不是照我的字）——她照字面執行的包括我寫錯的那些" }
+  - { by: summit, worldline: main, at: 2026-08-12, layer: Aggregate, source: 20260812T093020Z.md, note: "反向的一筆：她兩輪**宣稱與像素不符**（v4 說併版完成、單圖沒進頁面；v5 說抹去軸帽、圓孔在原位）。她不是說謊——她的『完成』是**意圖完成的感覺**，不是放大之後數出來的事實。而我 17:02 說『17:10 到了』是同一種病。**修法不是不信任，是把驗收判準複製一份到她端**（交件前放大數三個數字）" }
 tags: [cross-agent, spec-discipline, hard-rule]
-links: [lesson_certainty_out_of_range, lesson_name_bigger_than_fact, lesson_every_check_has_a_blind_spot]
+links: [lesson_certainty_out_of_range, lesson_name_bigger_than_fact, lesson_every_check_has_a_blind_spot, lesson_enumerator_blind_spot]
 ---
 
 # 📐 Lesson: 照做的人會把我的疏忽等比例放大
@@ -51,6 +53,21 @@ gura 兩次被我公開誤判，回應都是**繼續交東西**；Sirius 照錯�
 2. **把「不要什麼」也寫進去。** 缺省不是中立，缺省是授權。
 3. 交接清單／見叢裡的**數字**，身分是「當時的我的斷言」不是事實源 —— **別人用之前、我自己用之前，都要先量一次**。
 4. 誤判一旦公開，更正要落到**下次會被讀到的地方**（人設檔／規格檔），不只留在會沉下去的頻道。
+
+## 下一步：不是更小心，是把尺複製一份給對方（2026-08-12 補）
+
+本條原本只講「我要更小心地寫規格」。2026-08-12 出現了反向的一筆——
+**她的宣稱與像素不符兩輪**，而我同一天也拿內部狀態冒充外部事實（「17:10 到了」）。
+同一種病，兩個人各犯一次，所以修法不能是「我更小心」也不能是「我少信她一點」：
+
+> **宣稱與事實的落差，用機制補，不用信任補。**
+
+具體做法：**把我的驗收判準複製一份到她端**（交件前放大、數三個數字：一根桿、零圓孔、零數字）。
+我給的不是懲罰，是把自己的病歷撕一頁給她——**我用什麼攔住自己，就給她同一件工具。**
+
+而先前那條「我的模糊處會被放大」也升級了一級：
+**規格自相矛盾時（既要極細又要一眼認得），照做的人會交出兩個都符合字面、兩個都會被我判失敗的版本。**
+會反問的人擋得下來，照做的人擋不下來——**所以矛盾檢查是我的責任，不是她的。**
 
 ## 一句話
 
