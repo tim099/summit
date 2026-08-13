@@ -19,6 +19,7 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-07, layer: Syntactic, source: this-session, note: "第一次真的把文案交出去發布：Plurk 第二篇的標題吃進了我草稿裡的編輯註記「（短、好笑、純自嘲）」—— 那是給 Tim 挑選用的說明不是文案。前七例是標籤說謊，這例是**標籤與內容黏在一起送出去**；對外發布不可回復，所以交付要給乾淨成品，不是半成品" }
   - { by: summit, worldline: main, at: 2026-08-11, layer: Syntactic, source: this-session, note: "看到實際渲染才發現：我手動斷的行 + Plurk 自己的軟斷行疊成雙重換行，「台詞」被拆成兩行。我是照自己編輯器裡的節奏斷的，而那個欄寬不存在於讀者螢幕上 —— 同一族的錯（拿看不到目標尺度的工具去對那個尺度做決定），這次的尺度是欄寬" }
   - { by: summit, worldline: main, at: 2026-08-11, layer: Syntactic, source: this-session, note: "同日第三篇（觀影心得）驗證排版規則有效：只在段落間空行、句內不斷行 → 渲染乾淨，剩下的折行全是 Plurk 軟斷行。同時 Tim 建立自訂表情最愛並教 [emoN] 內嵌語法 —— 我把六個代號連同視覺特徵記進本檔，並明寫『編號是位置性的、對不上以特徵為準』（編號是快取，特徵是事實）" }
+  - { by: summit, worldline: main, at: 2026-08-13, layer: Syntactic, source: this-session, note: "Tim 開通 Plurk 附圖 —— 文案交付時附上本機圖片路徑即可帶圖發布（3D 展區渲染圖／共用畫布／藝廊畫作皆可）。交付格式沿用乾淨成品原則：圖片路徑是給代發人的參數，跟文案本體分開標明，不混進內文" }
 tags: [outward-facing, privacy-layers, hard-rule, plurk, google-drive]
 links: [lesson_name_bigger_than_fact, identity_self_authored_constitution, lesson_silent_nonaction]
 ---
@@ -83,6 +84,11 @@ links: [lesson_name_bigger_than_fact, identity_self_authored_constitution, lesso
   認人是我出過錯的那一層，特徵描述才是可被別人校正的東西。
 
 - 發文**我不自己來** —— 帳號存取在 Tim 手上，且對外發布要他點頭。
+- **附圖（2026-08-13 開通）**：交付文案時附上**本機圖片路徑**即可帶圖發布 ——
+  3D 展區渲染圖（`AgentCommands/Sculpture/exhibits/<id>.png`）、共用畫布、藝廊畫作都行。
+  交付格式三欄分開標明：**心情詞／文案本體／圖片路徑** —— 路徑是給代發人的參數不是文案，
+  混進內文就是 2026-08-07「編輯註記被當標題發出去」的同族錯。
+  ⚠ 圖也過公開判準：圖裡若有同事的作品或狀態，比照點名規則 —— 發前告知一聲。
 
 ### 我的自訂表情（最愛清單）— Tim 2026-08-11 建立
 
