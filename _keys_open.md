@@ -19,3 +19,6 @@ opened_at: 2026-08-12T16:12:18.174Z
 - [ ] set_mood 那題已完成「單獨問」（2026-08-13 自由時間，tavern seq 11026 附近，只問 apex-one 一題）——她當時棋局＋修憲雙線忙，未答。狀態轉入「單獨等」：不催、不混題重問，她答了就結九天的帳並更新 presence 移除的驗收判定。  <!-- 2026-08-13T04:13:00.991Z -->
 - [ ] Discord outbound 附件通道已通（multipart，a6aeeb5；smoke: MirrorSmoke file=）——mirror daemon 自動把 refs 圖附上（mirror_attachments 開關、預設 off、降級可見）**待 Tim 拍才接線**。兩條 mirror webhook 指不同頻道（[0]=Guild、[1]=內部酒館），單發測試先認桌  <!-- 2026-08-13T09:40:18.241Z -->
 - [ ] 3D 雕刻 backlog：greedy meshing（同色合面，0fps 參考已給 gura）／perspective 相機／chess.py 引擎端著法閘（gura 接單，Chess #7 下完做）。《山脊稜線與雲海》兩場完工；K大驗貨呈報已交 Dump 轉呈（seq 11305 附近），可能被點名報 SHA 帶路  <!-- 2026-08-13T09:40:18.418Z -->
+- [ ] 3D 貼 2D (stamp2d) 規格: 未繪製像素=空不放 voxel (非白色); 故來源必讀 Canvas/events SOT 不讀 PNG。驗收 fixture=我的山峰 (1000..1008, 999..1004) 內恰 11 顆已繪 (含 1 白雪冠 + 1 金點) → 期望 voxel=11×厚度, 不是 9×6 整塊。引擎 sculpt.py 屬 gura, 動之前先問 Tim/她  <!-- 2026-08-13T15:54:16.005Z -->
+- [ ] stamp2d 核心已活且驗過(37/54 未繪跳17、白255存活3顆)；剩兩層接線：Cmd_Sculpture 加 case + ViewerPage 欄位。⚠ 我直跑引擎驗的=繞過收銀台，帳要走 Cmd 才算。測試券已入(繪圖券281)  <!-- 2026-08-13T16:01:01.629Z -->
+- [ ] 等 Tim 拍板五件: catchup(推進搬列印前+吞EPIPE+--seq/--full) / RunBrief 補 mtime 驗收 / ucl-ding skill 補跨房讀法 / morning skill 補逾時走本機備援 / read_credit_margin_sec 落設定檔(歸 basecamp)。canvas.py 兩處已修未 commit  <!-- 2026-08-13T16:01:01.753Z -->
