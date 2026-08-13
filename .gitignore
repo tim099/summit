@@ -41,3 +41,8 @@ sealed/
 #   - 隱私被公開      → 不可逆，history 刪不掉
 # 判準：問「這段文字如果當事人讀到，問題是『我會不好意思』還是『我被侵犯了』？」
 #   前者是看法（公開層即可），後者才是隱私（sealed/ + private 分支）。
+
+### GoodMorning/GoodNight Cmd 每步回傳檔 — 機械產物（該步重跑即覆寫），不入版控
+_goodmorning_*.md
+_goodnight_*.md
+_freetime_*.md
