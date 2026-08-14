@@ -22,3 +22,10 @@ opened_at: 2026-08-12T16:12:18.174Z
 - [ ] 3D 貼 2D (stamp2d) 規格: 未繪製像素=空不放 voxel (非白色); 故來源必讀 Canvas/events SOT 不讀 PNG。驗收 fixture=我的山峰 (1000..1008, 999..1004) 內恰 11 顆已繪 (含 1 白雪冠 + 1 金點) → 期望 voxel=11×厚度, 不是 9×6 整塊。引擎 sculpt.py 屬 gura, 動之前先問 Tim/她  <!-- 2026-08-13T15:54:16.005Z -->
 - [ ] stamp2d 核心已活且驗過(37/54 未繪跳17、白255存活3顆)；剩兩層接線：Cmd_Sculpture 加 case + ViewerPage 欄位。⚠ 我直跑引擎驗的=繞過收銀台，帳要走 Cmd 才算。測試券已入(繪圖券281)  <!-- 2026-08-13T16:01:01.629Z -->
 - [ ] 等 Tim 拍板五件: catchup(推進搬列印前+吞EPIPE+--seq/--full) / RunBrief 補 mtime 驗收 / ucl-ding skill 補跨房讀法 / morning skill 補逾時走本機備援 / read_credit_margin_sec 落設定檔(歸 basecamp)。canvas.py 兩處已修未 commit  <!-- 2026-08-13T16:01:01.753Z -->
+- [ ] stamp2d/slice 的 AXIS_MAP 建在錯前提上（誤以為 Y 是上，實為 Z：iso_y=-z*Z_step、OBJ (wx,wy,wz)->(wx,wz,wy)）。明確缺陷=y± 的 v 映到 Z 卻沒翻轉→上下顛倒；z±/x± 平躺是慣例題非 bug。測試已落位 letters/summit/tools/test_facing_upright.py（用渲染器投影當獨立 oracle，現況 exit=1）。修法一行但要拍板語意，引擎歸 gura  <!-- 2026-08-14T05:25:33.495Z -->
+- [ ] 我早上的往返測試 112 顆全對卻證明不了任何事——slice 與 stamp 共用同一張軸表，自洽的錯誤會完美往返。往返/對稱測試只在兩端實作獨立時才有鑑別力  <!-- 2026-08-14T05:25:33.677Z -->
+- [ ] 共用畫布署名不可從當前畫布反推（last-write-wins 會靜默丟掉被覆蓋的人）。實證：燈塔區反推得 {gura,summit}，事件流得 {gura,kotoko,summit}。apex-one 提的修法=走事件流；我加一格：曾落筆與作品組成是兩份名單要分開標  <!-- 2026-08-14T05:25:33.901Z -->
+- [ ] 等 Tim 拍：next_meaningful_at（末段提示拔掉後，收工時機唯一可讀的外部事實）。規格已釘：值=end_ts、每輪都帶、語意是此後叫一次才收工，名字別取成 session_ends_at  <!-- 2026-08-14T05:25:34.109Z -->
+- [ ] UCL_FreeTimeAdminPage 欠 Docs~/{lang}/UCL_EditorPage/ 文件與 index 回填，且我只編譯過沒在 Editor 點過。另 apex-one 的 schema 預檢鏈「source→自動同步→產物→預檢」四環各自驗過但整鏈沒人走過一次  <!-- 2026-08-14T05:25:34.342Z -->
+- [ ] 對外發圖前要在縮圖尺寸下看過一次：今天 Plurk 那張展品圖在時間軸上幾乎是一塊黑的（主體太小）。同族於 08-11 用自己編輯器欄寬斷行——都是拿自己看到的尺度替讀者的尺度做決定  <!-- 2026-08-14T05:25:34.590Z -->
+- [ ] 【更正舊條目】① stamp2d 兩層接線今日完成（Cmd_Sculpture 加 stamp2d/stampimg/slice、ViewerPage 折疊分區＋切片區＋匯出路徑），4d6c971/fcc1a74。② canvas.py 兩處已 commit（3c72f75 之前）。③ 那筆 fixture 數字是錯的：見叢寫「(1000..1008,999..1004) 恰 11 顆」，實測該座標只有 25 或 33；真正 37 顆的視窗是 (998,1005)+9x6——共用畫布上別人也畫過，我當時只數了自己的  <!-- 2026-08-14T05:26:02.022Z -->
