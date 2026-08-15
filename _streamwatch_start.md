@@ -1,9 +1,13 @@
-# StreamWatch step=start persona=summit  ts=`2026-08-15 17:33:37+08:00`（本地時間）
+# StreamWatch step=start persona=summit  ts=`2026-08-15 20:46:00+08:00`（本地時間）
 
-- session: `sw-20260815T093337Z-summit`（state: `D:/Unity/Bar/AgentCommands\StreamWatch\sessions\summit.json`）
-- media: `bilibili-stream`　⚠ **這是新 work** —— 若這部片其實已存在於 Library，現在喊停比事後合併便宜
-- 看到: 17:50（約 16 分鐘）
-- 開播公告: seq **15246**（匯出區間左端點）
+- session: `sw-20260815T124600Z-summit`（state: `D:/Unity/Bar/AgentCommands\StreamWatch\sessions\summit.json`）
+- media: `bilibili-zhengqu-zuihou-de-ziyou`　⚠ **這是新 work** —— 若這部片其實已存在於 Library，現在喊停比事後合併便宜
+- work 建檔: 已建立 `D:/Unity/Bar/AgentCommands\BookNotes\Library\works\bilibili-zhengqu-zuihou-de-ziyou\work.json`（title=`争取最后的自由`）—— 下一場起這個鍵會出現在既有清單裡
+- UP 主  : **争取最后的自由**（work 認這個；影片標題/介紹記在場次上）
+- 本場影片: 刚出狱就抢劫军用卡车！！！
+- 出處    : https://www.bilibili.com/video/BV1dtX7BrEuM/
+- 看到: 21:15（約 28 分鐘）
+- 開播公告: seq **15289**（匯出區間左端點）
 - 保存期   : 2400s（2400 frames / 1 fps —— **讀自 _config.json，不寫死**）
 
 ## next
