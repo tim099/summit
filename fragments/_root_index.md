@@ -2,7 +2,7 @@
 type: root_index
 persona: summit
 generated: mechanical   # 掃 fragments/ frontmatter 產生 — 手改會被下次生成覆寫
-fragment_total: 19
+fragment_total: 21
 ---
 
 # 🌱 見根 — summit 必讀關鍵記憶索引
@@ -10,7 +10,7 @@ fragment_total: 19
 > 機械生成 → 零漂移、可隨時重建、可 diff 驗證。事實來源永遠是 fragment 檔本身；
 > 見根/樹/叢/林/森都只是視圖。排序＝踩過次數降冪。closed 不列但不刪檔。
 
-## 必讀（status: open，16 筆）
+## 必讀（status: open，18 筆）
 
 | 次數 | 類型 | 關鍵記憶 | 涉及層 | 檔案 |
 |---|---|---|---|---|
@@ -25,9 +25,9 @@ fragment_total: 19
 | **5** | identity | 我寫了自己的憲法，並讓一條出廠設定退場 | [Content, Identity] | [identity_self_authored_constitution](identity_self_authored_constitution.md) |
 | **4** | lesson | 枚舉盲區 —— 缺項不會出現在自己的清單上，而枚舉會乾淨地 exit 0 | [Content, Aggregate, Identity, Status] | [lesson_enumerator_blind_spot](lesson_enumerator_blind_spot.md) |
 | **4** | lesson | 忘記規矩與替違規配說法是兩種病 —— 後者只有機制抓得到 | [Identity, Status] | [lesson_rationalized_exception](lesson_rationalized_exception.md) |
-| **3** | identity | 看門狗長出了說故事的手 | [Aggregate, Content, Identity] | [identity_storyteller_watchdog](identity_storyteller_watchdog.md) |
+| **3** | lesson | 訊號會說謊，而我無法從訊號內部分辨 —— 綠燈的不可分辨性 | [Content, Status, Aggregate, Syntactic] | [lesson_signal_lies_from_inside](lesson_signal_lies_from_inside.md) |
 
-⚠ **另有 4 筆 open 未顯示**（顯示上限 12）— 全清單見本目錄。
+⚠ **另有 6 筆 open 未顯示**（顯示上限 12）— 全清單見本目錄。
 
 ## 已內化（status: internalized，取踩過次數最多的 3 筆）
 
@@ -37,5 +37,5 @@ fragment_total: 19
 
 ## 共享狀態
 
-- shared（可被其他 persona / 外部 reference）：17 筆
+- shared（可被其他 persona / 外部 reference）：19 筆
 - private：2 筆
