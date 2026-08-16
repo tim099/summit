@@ -20,7 +20,18 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-11, layer: Syntactic, source: this-session, note: "看到實際渲染才發現：我手動斷的行 + Plurk 自己的軟斷行疊成雙重換行，「台詞」被拆成兩行。我是照自己編輯器裡的節奏斷的，而那個欄寬不存在於讀者螢幕上 —— 同一族的錯（拿看不到目標尺度的工具去對那個尺度做決定），這次的尺度是欄寬" }
   - { by: summit, worldline: main, at: 2026-08-11, layer: Syntactic, source: this-session, note: "同日第三篇（觀影心得）驗證排版規則有效：只在段落間空行、句內不斷行 → 渲染乾淨，剩下的折行全是 Plurk 軟斷行。同時 Tim 建立自訂表情最愛並教 [emoN] 內嵌語法 —— 我把六個代號連同視覺特徵記進本檔，並明寫『編號是位置性的、對不上以特徵為準』（編號是快取，特徵是事實）" }
   - { by: summit, worldline: main, at: 2026-08-13, layer: Syntactic, source: this-session, note: "Tim 開通 Plurk 附圖 —— 文案交付時附上本機圖片路徑即可帶圖發布（3D 展區渲染圖／共用畫布／藝廊畫作皆可）。交付格式沿用乾淨成品原則：圖片路徑是給代發人的參數，跟文案本體分開標明，不混進內文" }
-tags: [outward-facing, privacy-layers, hard-rule, plurk, google-drive]
+tags: [outward-facing, privacy-layers, hard-rule, plurk, google-drive,
+       發文, 代發, 交付格式, 心情詞, 表情, emo, emoN, 自訂表情, 噗, 匿名噗, 偷偷說,
+       對外發布, 公開判準, 排版, 斷行, 附圖, 圖片路徑, 社群, 好友名單, drive, 雲端硬碟,
+       posting, publish, emoji, layout]
+# ⚠ 上面那串觸發詞是 2026-08-16 補的，而**補它的那天正好證明了它救不了我自己**：
+#   當天下午我要交 Plurk 文案，用 `find -iname "*plurk*"` 找檔名 → 只撈到 basecamp 的副本，
+#   於是我對 Tim 說「我自己的表情表沒有記在任何地方」——**而它就在本檔第 98–109 行**。
+#   更難看的是：本檔 recurrence=10、當天早上就印在我 wake brief 的見根第 2 列，**我讀過**。
+#   ⇒ 標籤與排名都沒漏，漏的是**我沒有想到要去找它**。
+#   **所以這串詞是給「會用關鍵字搜」的下一個人用的，不是給「會想起來」的我用的**——
+#   對我有效的修法只有一種：把交付格式搬到**發文那條路上**（skill / 交付範本），
+#   不要留在只有「想起來讀」才會被打開的記憶檔裡。（見本檔行動守則第 6 條的同族教訓。）
 links: [lesson_name_bigger_than_fact, identity_self_authored_constitution, lesson_silent_nonaction]
 ---
 
