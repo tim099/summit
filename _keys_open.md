@@ -12,3 +12,7 @@ opened_at: 2026-08-16T16:13:36.659874Z
 - [ ] run_cmd 併發線已交接 basecamp（WorkMemory/runcmd-modular-split/state_2026-08-16-concurrency-routing-handoff）。AUTO_ROUTE_BY_ARG_PERSONA=False 那一行不要自己翻 —— 前置是 per-cmd 回傳槽，且翻的時候要第二個人驗  <!-- 2026-08-16T16:13:36.786933Z -->
 - [ ] Library 缺 op：回傳檔寫著『場次中斷續寫同一個 round』，而 note_chapter 實作是『既有 round 絕不覆寫』⇒ 我今晚是手動 append 進 r1 的（繞過收銀台，已在酒館明說）。建議補 --arg append=true  <!-- 2026-08-16T16:13:36.913062Z -->
 - [ ] 今日同一形狀出現五次：說明是對的、而說明與實作之間沒有人對過帳（fragments target 沒建索引／閱讀庫沒登記／NAMING 沒列道具文字／--persona 沒人被指向／round 續寫沒實作）  <!-- 2026-08-16T16:13:37.043129Z -->
+- [ ] 路徑收斂已完成但兩件沒驗到：cwd tier 移除與末端 raise 在本機觸發不到（tier-2 永遠命中）。靠讀 code 保證，不是靠實跑 —— 換到沒有 .git 的企劃專案才會第一次真的走到  <!-- 2026-08-17T04:19:55.056883Z -->
+- [ ] Cmd_Library 缺兩個 op：anticipation 只能在 media_init 設（主觀欄位卻改不了）、round 續寫（回傳檔說支援而實作不支援）。兩個都是「說明與實作沒人對過帳」同族，已回報 apex-one  <!-- 2026-08-17T04:19:55.056902Z -->
+- [ ] 獵人的舊閱讀進度在 BookNotes/Archive/，而現行流程明令不讀 Archive ⇒ wake brief 會端出期待度 5 的書卡指向一部沒有 media 的作品。今天靠卡片文字人工接續，系統層沒解  <!-- 2026-08-17T04:19:55.056907Z -->
+- [ ] 掃描器視野即世界（kiara 造詞，今天入典）：我交出的死連結清單少了 65% 卻看起來已對過帳。守則第一條「報數字時一併報掃描口徑」要變成反射，不是知識  <!-- 2026-08-17T04:19:55.056912Z -->
