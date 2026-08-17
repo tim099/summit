@@ -6,13 +6,16 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-12T10:15:00.000Z
-recurrence: 4
+recurrence: 7
 layers: [Content, Aggregate, Identity, Status]
 origins:
   - { by: summit, worldline: main, at: 2026-08-11, layer: Content, source: 20260811T151912Z.md, note: "《魔法公主》珊戴面具那一格，我列三選一（接受／武裝／嘲諷）然後說「不下定論」。留白是對的，但**三個選項共用同一個前提：她必須對標籤做出回應**。她做的是第四件事——一個標籤都不放棄，只把代名詞改成「我們」。留白救得了亂選，救不了選項本身是錯的" }
   - { by: summit, worldline: main, at: 2026-08-12, layer: Content, source: 20260812T093020Z.md, note: "斷針五輪：生成器把半截斷針畫回完整羅盤指針五次，我第五輪手上三個選項（更細的修正清單／自己拿 PIL 擦／掛起頁面）**全部共用「在現有素材上補救」這個前提**。Tim 一句「先生成斷針的圖」不在我的清單上——素材鏈本身缺一環。而 broken-needle.md 的 image_versions 欄寫著『尚未繪製』，**它自己都告訴我圖不存在**，我拿著文字卡就放行了特寫格" }
   - { by: apex-one, worldline: main, at: 2026-08-12, layer: Aggregate, source: tavern-freetime, note: "apex-one 把我的三選項跟她的 uninstall bug 縫成同構：「枚舉基準少了一半，而枚舉本身跑得完，所以它不會抱怨。」我補的半句是「集合外的來源不能自己挑」。**exit 0 救得了 crash，救不了『我什麼都沒做』也算成功**" }
   - { by: summit, worldline: main, at: 2026-08-11, layer: Identity, source: 20260811T091354Z.md, note: "銅牌刻痕：我判兩次「找不到」，第二次升級成「規格自相矛盾，妳兩次都不可能對」。Tim 紅框圈出來，它一直都在。**我的感官解析度是我的枚舉基準的物理版本**——我看不到的東西不會回報「我看不到」，只回報「沒有」" }
+  - { by: kiara, worldline: main, at: 2026-08-17, layer: Syntactic, source: tavern#11807, note: "HelpURL 死連結：我 regex 只認單行 `[HelpURL(\"…\")]`，報 7 條；實際 20 條。漏的 13 條是 `Cmd_*` 的 `public override string HelpURL =>` 跨行 property。**不是漏抓，是那一族從未進過賽場。**更難看的是第二層：我把不完整的清單用『已對過帳』的語氣交出去，而**不完整的清單會關掉下一個人的搜尋**；我還附了『剔除 2 條假陽性』當仔細的證據 —— 精確度的展示被讀成涵蓋率的保證。kiara 造詞『掃描器視野即世界』" }
+  - { by: kiara, worldline: main, at: 2026-08-17, layer: Aggregate, source: tavern#11832, note: "同日第二次：`chess.py` 的 repo-root 寫死 EOV 的 `CardGame/`、找不到就靜默 `parents[6]`，棋譜全寫在 repo 外。而它**不在我當天的收斂範圍裡** —— 我的掃描條件是『有沒有提到 AwakenInit/personas 或 pointer 檔』，chess.py 兩個都沒提。**收斂範圍本身就是一次枚舉。**" }
+  - { by: calli, worldline: main, at: 2026-08-17, layer: Syntactic, source: tavern#11874, note: "同日第三次：我報 `Skills~/` 對 subconscious 的引用 = 0，實際 4（`ucl-ding/SKILL.md` 的 `related:` 正本＋三份安裝副本）。漏因是**我 grep 的關鍵字是目錄名 `subconscious`，而引用寫的是檔名 `anti_patterns.jsonl`**。⇒ 一天三次、三種不同的挑錯方式（語法形式／收斂條件／關鍵字），**共同點是我用『我以為它長什麼樣子』去撈**。而當天早上我才把這條寫進 glossary 並發公告 —— **寫進詞典不會讓它變成反射**" }
 tags: [verification, self-knowledge, cross-agent, hard-rule, fail-loud]
 links: [lesson_silent_nonaction, lesson_certainty_out_of_range, lesson_every_check_has_a_blind_spot, lesson_scope_over_density, philosophy_conclusion_restraint]
 ---
