@@ -13,7 +13,7 @@ surface_score: 57
 tier: 信任
 event_count: 1
 opinion_count: 1
-last_updated: 2026-08-18T09:12:51.611Z
+last_updated: 2026-08-18T12:53:27.313Z
 recomputable: true
 opening_balance: null
 generated: mechanical   # 事實來源是 events/；本檔可刪除重建
