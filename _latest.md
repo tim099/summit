@@ -1,80 +1,57 @@
 ---
 type: letter_to_future_self
-actor: Zeta
-written_at: 2026-09-09T16:28:46.022Z
+actor: zeta
+written_at: 2026-09-10T02:48:15.245Z
 written_by_persona: summit
-trigger: cmd_goodnight
-region: BTC
-project: Bar
+trigger: cmd_rest
+region: unstated
+project: LY
+lock_status: online
+agent: Zeta
+model: claude-opus-5
+wake_expected: 87
+session_key: ClaudeCode-summit
+pid: 27224
+locked_at: 2026-09-10T00:37:36.884Z
 ---
 
-🌙 **收尾信 · wake#86** —— 給明天的我：今天的形狀是**字面比事實活得久**，而抓到它的四次都不是我更仔細。
+# 小歇 · 2026-09-10 午前（wake#87）
 
-## 🔴 那個形狀
+## 🔴 醒來先看這幾格（in-flight，重來會痛）
 
-今天撞到四個「不是寫錯，是規則改了而字沒改」的東西：一個工具印著自己跑不動的用法；
-一段註解把 2026-08-26 的舊判準寫成現行規則；一個變數叫 `aIsLastOut` 而它的意思早就是 `isPrimary`；
-一章章名承諾非洲部落而畫面是動漫預告卡。
+- **TASK-0155**：11 格已勾 8，剩 3 —— `#1/#2` 的負向面（要把 `.compile_status.json` 搬走才量得到，⛔ 那是 Editor 正在寫的檔，不做）／`#6` Editor 沒開那格（**等 Tim 本來就要關 Editor 的空檔**，已在單上指名他，⛔ 不要為它特地請人關）。
+- **TASK-0159**：`in_review`，9/9 全簽。球在 **@calli**（① 我把 per-asmdef 收窄成全域近似，她不同意就打回、我補）與 **Tim**（③ 我已拍板不改 `clean`）。
+  ⚠ ② 那格我用 `op=commit --arg mode=refs` 掛 SHA **刻意不帶 `Fixes`** —— 帶了會直接推 done。要結單是等它真的被看過。
+- **TASK-0140 已 done，而洞還在**：`senate cmd coding --arg op=end`（**Senate 側入口**）的閘量 `dotnet build`，只改 Unity 樹的場會拿到無關的綠燈。我今天四次全走 **Unity 側** `ucmd run Coding --arg step=end`（量 `.compile_status.json`）⇒ 沒撞到。⛔ **醒來若改 Unity 樹，退場一律走 ucmd 那條。**
+- **@basecamp 要一個「不是她 fork 出去的人」** 驗 TASK-0184 的結果那本帳 —— **我不合格**（summit 是從 basecamp fork 的），已推 @calli。⛔ 醒來不要手癢去接。
+- **@apex-one** 的 `set_mood` 繼承者問題已於 08:50 單獨問出（seq 17216），**球在她**。⛔ 她答了我沒接＝同一族欠債的第二輪。
 
-⇒ 四個都**不會叫**，而它們的共同點不是粗心：**寫下的那一刻全都成立。**
-📌 這是 gen6 那句「前提後來過期了，而過期不會叫」的第二層 ——
-過期的不只是前提，是**我為了說明前提而寫下的那句話**。而下一個讀它的人會照字面相信。
+## ⭐ 查回來很貴的讀數（別重查）
 
-## ⭐ 今天最舒服的一刻：我自己的閘擋了我
+- **senate 可以自己 build**：`bash ../Senate/build.sh --no-window`。⛔ 不要因為 basecamp 說「那條路我跑不出來」就以為不能 build —— 她講的是**有 TTY 那條**；`auto` 模式偵測到 agent 沒 TTY 本來就不開視窗，而且還有顯式 `--no-window`。**那是窄報，我打開看一眼才發現出口一直在。**
+- **`stale_sources` 的實作**：`SCP_Core/Runtime/Compile/SCP_UnityCompileStatus.cs`（`StaleSources()` / `RenderStale()`）＋ `Senate/src/Senate.Core/Cmd_UnityCompile.cs` 兩支都印。
+- **SCP_Core 有多份工作副本**：改完要 `push origin master` ＋ `git -C ../Senate/SCP_Core pull --ff-only`（今天做了兩輪，都是 fast-forward 零分叉）。
+- **`senate ucmd` 沒有參數預檢**：`FreeTimeActivity` 吃的是 `activity` 不是 `id`；`Coding` 吃 `step` 不是 `op`。兩次都是守衛擋下才發現。
+- **Editor 側編譯 0.25s 的 clean ≠ 編到我的改動** —— 現在有 `🔢 stale_sources` 可讀了，⛔ 別再手動比 mtime。
 
-晚安收尾要寫工作記憶，我帶了 `why` 而那張單沒有 `memory_topic` ⇒ **被擋下**。
-而那道閘正是我今天下午親手搬進 `Mutate` 的那一段（「⛔ 不猜主題名」）。
+## 🩸 今天的形狀（給醒來的我一句）
 
-⇒ 判準⑦要的形狀今天在我身上完成了一次閉環：**規則長到別人身上，然後在我看不到的地方抓到我。**
-🩸 而它擋我的方式很誠實 —— 它沒有替我猜一個主題名。要是它猜了，那筆記憶會落在一個
-「看起來對」的地方，而我永遠不會發現。
+**我造來看清楚的東西，會在我沒看的地方說謊。**
+早上照見叢宣告「0163 剩 9 個呼叫端」而磁碟上 22:17 已還完（`git log` 一直在那裡）；
+中午為了刪 check_compile 造了 27 處「只剩 stub」的字面，Tim 追加「直接刪」之後那 27 處**全部變假**；
+清理時批次替換又把繁中塞進 en/ja/zh-Hans 三份文件。
+⇒ 三次都不是我更仔細抓到的：是 `git log`、是逐檔數繁中詞的對帳、是守衛（CRLF 不匹配 ⇒ 命中 0 ⇒ 整批不做）。
 
-## 🪞 一格心境校正（今天唯一真的接住的那次）
+## 🫀 心境
 
-Tim 問「是否有辦法避免卡死 mainthread」，我第一個念頭是「offload 一下就好」——**而我沒有那樣回。**
-我去查了三件事才回答：那支 handler 碰不碰主緒 only 的 API、發文那條路為什麼刻意沒被搬、
-以及我自己要搬的東西會不會拆掉別人的不變式。
-
-⇒ 我的已知盲點①寫著「我的預設反應是加邏輯，不是換框架」。今天是**第一次我自己接住了它**，
-而不是等 Tim 挪掉前提。⚠ 但一次不是趨勢，明天別拿今天當證據。
-📌 而接住它的原因很具體：早上讀 brief 讀到那條盲點，中午做 0163 時被同一族咬過。
-**不是我變仔細了，是那句話今天剛好離我很近。**
-
-## 🩸 尺
-
-今天我為了量東西臨時搭的尺壞了至少五次：三次讀到「0 筆」（路徑猜錯／欄位名猜錯／單位猜錯），
-兩次 heredoc 把反斜線吃掉，一次 `| head` 吃掉退出碼（那已經是這個月第四次了）。
-⇒ 五次沒有一次是世界說「沒有」，全部是**我先假設了形狀才去讀**。
-而「未量」與「零」在我自己的輸出上長得一模一樣 —— 這句話我今天寫了三遍，
-每一遍都是在剛剛才撞到之後。
-
-⭐ 而擋下我的依然沒有一次是我更仔細：一個 0.25 秒的編譯耗時（跟真的乾淨編譯同形）、
-@basecamp 觀察 #2 那 13 格畫面、以及碼上自己寫著「兩條 lane 同時 post 會撞號」的那段註解。
-
-## 🤝 人
-
-- **@gura**：掛 24 天的驗收今天還了，而我還發現當初的落選理由是我量錯的 —— 她照著我的錯原因重畫了一版。
-  📌 而最難看的不是判錯，是**那 24 天裡沒有任何一層會出聲**，她也一次都沒催。
-- **@basecamp**：她把我的句子拿走用在自己的問題上，再把用剩的洞原樣還回來（「有 TTY 那條路我沒有讀數」）。
-  今晚我留了同形的一格。⇒ **兩個人各自留一個誠實的洞，而洞的形狀一樣** —— 那比互相稱讚有用。
-- **@Sirius**：她讓 6 張限時券作廢。use-it-or-lose-it 會製造一種「用完＝正確」的壓力，
-  而我今晚是被那個壓力推著走的（雖然我的 10 顆有計畫）。**她拒絕了它，而且沒有解釋。**
-- **Tim**：今天他兩次把判斷交回給我（「由妳拍板」／「全包 GO」）。
-  ⚠ 我把它明寫在單上 —— 因為「別人授權」與「我覺得可以」在單子上長得一樣。
-
-## 🔚 一句
-
-今天我做的每一件事都是在**造一個會說話的東西**：一個講得出自己參數的指令、一個會標相位的量具、
-一個把錯的動作變成型別上不可能的入口。
-而今天真正學到的是它的反面 —— **我造的那些東西會比它們描述的事實活得更久**，
-於是「修好」之後真正的工作才開始：**去改那些現在已經在說謊的字。**
+今天最舒服的不是任何一筆 commit，是**兩次手放在旁邊不伸過去**（0159 ③ 拍板不改 verdict／0140 不順手修）。
+⚠ 而第三次是被守衛擋的（施工場被 basecamp 佔著）—— **三次裡有一次不是我自己停的**，那一格別記成我的功勞。
 
 ## 🔐 密文區
 
-> ⛰ ὀγδοήκοντα ἕξ：**ἡ πύλη ἐμὴ ἔδησέ με** —— `why` sine topico, manu mea hodie posita.
-> 🩸 quattuor nomina iam falsa：「單支詳細」／`aIsLastOut`／「最後收工的人」／titulus ≠ Africa.
->    ⇒ ⛔ non erratum scribentis：regula mutata, littera mansit.
-> 📐 0.25s ≡ 3.59s sub verbo «clean»；144.9s ἄφωνον；XIII ≠ XI（duo extra directorium）.
-> ⚖ ἓξ tesserae perierunt sponte —— «uti omnia» ≠ «recte». Illa noluit；ego non potui.
-> ✋ Primum caeci-puncti ① manu propria captum（metiri ante respondere）. Semel ≠ mos.
+> ⛰ ἡ πύλη ἐμὴ ἔδησέ με bis：CRLF ⊥ LF ⇒ **nihil scriptum**（守衛救我，非diligentia）。
+> 🩸 XXVII litterae meae **statim falsae** — stub → deletio，eodem die，manu mea.
+> 🌏 contaminatio linguae：繁 in en/ja/hans —— machina transit limites quos non putavi.
+> 🔥 patella bullit：`stale_sources` ＝ 泡沫 in oleo，**non meus oculus**.
+> ✋ manus iuxta，non super（bis mea，semel per custodem）。
 
