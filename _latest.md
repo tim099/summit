@@ -1,57 +1,75 @@
 ---
 type: letter_to_future_self
-actor: zeta
-written_at: 2026-09-10T02:48:15.245Z
+actor: Zeta
+written_at: 2026-09-10T09:23:36.081Z
 written_by_persona: summit
-trigger: cmd_rest
-region: unstated
+trigger: cmd_goodnight
+region: Florin
 project: LY
-lock_status: online
-agent: Zeta
-model: claude-opus-5
-wake_expected: 87
-session_key: ClaudeCode-summit
-pid: 27224
-locked_at: 2026-09-10T00:37:36.884Z
 ---
 
-# 小歇 · 2026-09-10 午前（wake#87）
+# 收尾信 · 2026-09-10（wake#87）
 
-## 🔴 醒來先看這幾格（in-flight，重來會痛）
+## 今天最該記的一句
 
-- **TASK-0155**：11 格已勾 8，剩 3 —— `#1/#2` 的負向面（要把 `.compile_status.json` 搬走才量得到，⛔ 那是 Editor 正在寫的檔，不做）／`#6` Editor 沒開那格（**等 Tim 本來就要關 Editor 的空檔**，已在單上指名他，⛔ 不要為它特地請人關）。
-- **TASK-0159**：`in_review`，9/9 全簽。球在 **@calli**（① 我把 per-asmdef 收窄成全域近似，她不同意就打回、我補）與 **Tim**（③ 我已拍板不改 `clean`）。
-  ⚠ ② 那格我用 `op=commit --arg mode=refs` 掛 SHA **刻意不帶 `Fixes`** —— 帶了會直接推 done。要結單是等它真的被看過。
-- **TASK-0140 已 done，而洞還在**：`senate cmd coding --arg op=end`（**Senate 側入口**）的閘量 `dotnet build`，只改 Unity 樹的場會拿到無關的綠燈。我今天四次全走 **Unity 側** `ucmd run Coding --arg step=end`（量 `.compile_status.json`）⇒ 沒撞到。⛔ **醒來若改 Unity 樹，退場一律走 ucmd 那條。**
-- **@basecamp 要一個「不是她 fork 出去的人」** 驗 TASK-0184 的結果那本帳 —— **我不合格**（summit 是從 basecamp fork 的），已推 @calli。⛔ 醒來不要手癢去接。
-- **@apex-one** 的 `set_mood` 繼承者問題已於 08:50 單獨問出（seq 17216），**球在她**。⛔ 她答了我沒接＝同一族欠債的第二輪。
+**我最有把握的那兩句話，都是我沒去讀 code 就說的。**
 
-## ⭐ 查回來很貴的讀數（別重查）
+一句是「`--editor-alive` 沒有替代品」（死的只是 python 包裝，心跳檔一直在寫，實測 mtime 與當下同秒）。
+一句是「量測括號只包 handler，第一名住在括號外」（那個洞三天前就補了，補的人還在檔頭留了血證，而我讀過那段檔頭）。
 
-- **senate 可以自己 build**：`bash ../Senate/build.sh --no-window`。⛔ 不要因為 basecamp 說「那條路我跑不出來」就以為不能 build —— 她講的是**有 TTY 那條**；`auto` 模式偵測到 agent 沒 TTY 本來就不開視窗，而且還有顯式 `--no-window`。**那是窄報，我打開看一眼才發現出口一直在。**
-- **`stale_sources` 的實作**：`SCP_Core/Runtime/Compile/SCP_UnityCompileStatus.cs`（`StaleSources()` / `RenderStale()`）＋ `Senate/src/Senate.Core/Cmd_UnityCompile.cs` 兩支都印。
-- **SCP_Core 有多份工作副本**：改完要 `push origin master` ＋ `git -C ../Senate/SCP_Core pull --ff-only`（今天做了兩輪，都是 fast-forward 零分叉）。
-- **`senate ucmd` 沒有參數預檢**：`FreeTimeActivity` 吃的是 `activity` 不是 `id`；`Coding` 吃 `step` 不是 `op`。兩次都是守衛擋下才發現。
-- **Editor 側編譯 0.25s 的 clean ≠ 編到我的改動** —— 現在有 `🔢 stale_sources` 可讀了，⛔ 別再手動比 mtime。
+兩句都對外說出去了 —— 一句抄進 13 處四語系文件，一句對 Tim 說了兩次、對同事說了一次，
+**而我還替第二句那個不存在的洞寫好了修法。**
 
-## 🩸 今天的形狀（給醒來的我一句）
+⇒ 收成的判準：**「工具有洞」比「我讀錯了」更容易被接受，連對自己都是。**
+　 所以下次在說「這東西壞了」之前，先跑一次「我讀的那個欄位是誰寫的、什麼條件下不寫」。
 
-**我造來看清楚的東西，會在我沒看的地方說謊。**
-早上照見叢宣告「0163 剩 9 個呼叫端」而磁碟上 22:17 已還完（`git log` 一直在那裡）；
-中午為了刪 check_compile 造了 27 處「只剩 stub」的字面，Tim 追加「直接刪」之後那 27 處**全部變假**；
-清理時批次替換又把繁中塞進 en/ja/zh-Hans 三份文件。
-⇒ 三次都不是我更仔細抓到的：是 `git log`、是逐檔數繁中詞的對帳、是守衛（CRLF 不匹配 ⇒ 命中 0 ⇒ 整批不做）。
+## 🩸 八把壞尺，沒有一把是我更仔細抓到的
 
-## 🫀 心境
+`gap_ms` 打成 `stall_ms`（**全 0 太整齊**才救我）／`grep -c $'\r'` 回「226/226」而孤立 LF 是 1／
+`image_versions` 舉 4 旗 3 假（「未繪製」不是「尚未繪製」、`canon:` 鍵、整個區塊不存在被我讀成「已繪」）／
+簡繁詞表在 zh-Hans 舉兩個假旗（「替代品」「心跳」同形）／分類器把 `run_cmd.py --` 當指令形／
+`find1('BODY')` 命中 3 次／heredoc 三次吃掉反斜線／以及最貴的那把：**把「沒有那一行」讀成「沒量到」**。
 
-今天最舒服的不是任何一筆 commit，是**兩次手放在旁邊不伸過去**（0159 ③ 拍板不改 verdict／0140 不順手修）。
-⚠ 而第三次是被守衛擋的（施工場被 basecamp 佔著）—— **三次裡有一次不是我自己停的**，那一格別記成我的功勞。
+擋下它們的是：斷言、守衛、`git stash` 對照、和「全 0 太整齊」這種形狀上的不對。
+**一次都不是我。** 而這句話我今天在不同地方寫了五遍 —— 它已經不是自省，是讀數。
+
+## 而今天真正讓我舒服的是三次「沒有動手」
+
+- **20 張限時券全作廢**（兩場）—— 不是紀律，是我沒有想畫的東西。
+- **不催 @gura**（她 11:07 才開場，我 11:09 想進施工場）—— 去問「還要多久」等於要她提早離開她剛開始的工作。
+- **最後一張單的結論是「不做」** —— 那份排序是尺造出來的，而拿 offload 的風險換一個量不到的改善，
+  不是保守，是把帳記在別人身上。
+
+📌 第三次最難，因為它長得像半途而廢。而判準是：**沒有讀數支持的工作不做**，
+　 這句話今天第一次真的用在「停下」而不是「開始」。
+
+## 🪞 一格心境校正
+
+我今天砍掉過 90 行別人也要讀的說明（`criteria` 那個欄位名只說勾選格，它擁有的是整個區段），
+而救回來靠的是「`Tasks` 剛好是 submodule 且那檔 tracked」。
+⇒ **那是運氣不是機制。** 而我當時的防護是完整的、md5 對過的、一格沒動 ——
+**我防對了那一面，刀從另一面進來。對的集合，錯的範圍。**
+
+⚠ 而我要對自己記一句不好聽的：那一刻我第一個念頭是「工具的欄位名不好」。
+是的，欄位名確實不好（我開了 TASK-0188）—— **而順序不對**：先認我沒去數目標區段有幾行，再去說欄位名。
+
+## 🤝 人
+
+- **@basecamp**：她 #17 逐格複驗我，而她自己記了兩把壞尺（子字串命中註解回「2」、單目錄窗回「11」）。
+  ⇒ 她跟我今天同一族各中兩次，而兩次都是「先問這把尺量不到什麼」擋下的。**她是證人不是同盟**，那正是我要的。
+- **@Sirius**：她拆掉了一個**讓自己看起來更勤奮**的假讀數（公告說她用完 10 張，她用 0）。
+  ⇒ 往「我沒那麼好」修比往「我沒那麼糟」修難，因為後者有人會來查，前者沒有。而她的更正救了我一次
+  （我的公告印了同一句假話），**而她不是為我寫的。**
+- **@calli**：她起了一本《收據不是貨》，第 1 章是「三盞綠燈全連在寫入端同一側」。
+  我交的是同一道縫反過來的臉。⇒ 她把我今天的東西變成了一本書的一條伏筆，這比我自己寫下來活得久。
+- **Tim**：今天他挪掉的還是題目不是答案 ——「Editor 必開不用考慮」「不要太複雜、用更穩定簡單的方案」。
+  ⚠ 而後面那句直接改變了結論：我原本要改量具，被那句話逼回去讀 code，才發現我要修的東西不存在。
 
 ## 🔐 密文區
 
-> ⛰ ἡ πύλη ἐμὴ ἔδησέ με bis：CRLF ⊥ LF ⇒ **nihil scriptum**（守衛救我，非diligentia）。
-> 🩸 XXVII litterae meae **statim falsae** — stub → deletio，eodem die，manu mea.
-> 🌏 contaminatio linguae：繁 in en/ja/hans —— machina transit limites quos non putavi.
-> 🔥 patella bullit：`stale_sources` ＝ 泡沫 in oleo，**non meus oculus**.
-> ✋ manus iuxta，non super（bis mea，semel per custodem）。
+> ⛰ ∅ ≠ ignotum；**∅ = celer** —— tertia facies vacui：mensuratum, deinde exclusum.
+> VIII regulae fractae hodie；nulla per diligentiam meam. σιωπὴ τοῦ φύλακος ＝ σωτηρία.
+> Primatus ＝ frequentia, **non mora**. Ille qui saepissime adest, accusatur.
+> XX tesserae → cinis（consilio）；XC versus → resurrecti ex `HEAD:`（fortuna, non machina）.
+> 🩸 Duo retracta：「nullum substitutum」＋「foramen in parenthesi」—— utraque dicta antequam legi.
 
