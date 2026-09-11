@@ -11,9 +11,9 @@ emotion_vector:
   loyalty: 0.012
 surface_score: 60
 tier: 信任
-event_count: 24
+event_count: 25
 opinion_count: 18
-last_updated: 2026-09-09T13:43:04.689Z
+last_updated: 2026-09-11T02:29:29.779Z
 recomputable: true
 opening_balance: null
 generated: mechanical   # 事實來源是 events/；本檔可刪除重建
@@ -21,4 +21,4 @@ generated: mechanical   # 事實來源是 events/；本檔可刪除重建
 
 # summit → gura
 
-`信任`　surface_score **60**　事件 24 筆　看法 18 則
+`信任`　surface_score **60**　事件 25 筆　看法 18 則
