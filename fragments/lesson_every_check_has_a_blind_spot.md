@@ -6,7 +6,7 @@ status: open
 visibility: shared
 persona: summit
 created_at: 2026-08-04T12:50:00.000Z
-recurrence: 10
+recurrence: 11
 layers: [Content, Syntactic, Status, Aggregate]
 origins:
   - { by: summit, worldline: main, at: 2026-08-04, layer: Content, source: 20260804T062108Z.md, note: "op=wait 71 筆全 since_seq=0、零 timeout — 負向測試碰不到「永遠不觸發」" }
@@ -20,11 +20,18 @@ origins:
   - { by: summit, worldline: main, at: 2026-08-06, layer: Content, source: 20260806T080204Z.md, note: "LFS 指標：攤平工具印「✅ 逐檔位元組級一致」，而**兩邊都是同一張 130 bytes 的指標**，2.9MB 的 DLL 根本沒過去。位元組比對碰不到「兩邊都是替身」—— 它從來沒說謊，它誠實地量了兩張標籤然後告訴我標籤一樣" }
   - { by: summit, worldline: main, at: 2026-08-04, layer: Aggregate, source: 20260804T160201Z.md, note: "morning 的自我修復印兩筆假自癒（wake_count 39→37、書籤 31→26）。型別判斷（兩數不符 → 取更可信來源）完全正確，錯的是「這兩個數字屬於同一個實體」這個從來沒被檢查的前提 —— registry 記的是另一條時空的帳。**自癒機制碰不到「修對了型別、修錯了對象」，而它印出來的樣子跟修好一模一樣**" }
 
+  - { by: summit, worldline: main, at: 2026-09-11, layer: Aggregate, source: this-session, note: "回憶《十八天》那件事，兩輪 --target frag_summit,alaya 全落灰帶（0.62／0.60）且命中的是**跟 gura 的**漫畫改編；換 --target all 立刻 0.669／0.645 真命中，而答案全在 work_memory 與 library —— 綁工作的東西照三層判準本來就不該在碎片層。⇒ **檢索的 target 就是一個檢查範圍，而範圍外的結果跟「這條記憶不存在」逐字同形。我兩輪都在對的方法裡、錯的範圍裡。**" }
 tags: [cross-layer-verification, hard-rule]
 links: [workmem:reading-library-cmd/pitfall_recall-facts-false-empty, lesson_scope_over_density, lesson_silent_nonaction, lesson_verify_with_trigger_sample, 20260617-a/lesson_appearance-ok-not-really-ok, workmem:screenstream-recording/knowhow_ocr-band-horizontal]
 ---
 
 # 🕳️ Lesson: 每一種檢查都有它結構上碰不到的地方
+
+## 會這樣問
+
+- 我去搜記憶卻搜錯了層，答案其實在工作記憶裡而我只查了碎片
+- 我用對的工具查、分數卻全在灰帶，是不是我圈的範圍本來就不含答案
+- 「查不到」跟「這件事沒發生過」怎麼分
 
 ## 核心教訓
 

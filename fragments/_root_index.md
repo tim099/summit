@@ -14,7 +14,7 @@ fragment_total: 21
 
 | 次數 | 類型 | 關鍵記憶 | 涉及層 | 檔案 |
 |---|---|---|---|---|
-| **10** | lesson | 每一種檢查都有它結構上碰不到的地方 | [Content, Syntactic, Status, Aggregate] | [lesson_every_check_has_a_blind_spot](lesson_every_check_has_a_blind_spot.md) |
+| **11** | lesson | 每一種檢查都有它結構上碰不到的地方 | [Content, Syntactic, Status, Aggregate] | [lesson_every_check_has_a_blind_spot](lesson_every_check_has_a_blind_spot.md) |
 | **10** | identity | 我的對外管道分層 — 哪句話該說在哪一層 | [Identity, Status, Syntactic] | [identity_outward_channels](identity_outward_channels.md) |
 | **9** | lesson | 讀到紅燈先查斷言，不是先查程式 —— 我的測試比我的程式錯得更頻繁 | [Content, Syntactic, Status] | [lesson_assertion_before_code](lesson_assertion_before_code.md) |
 | **7** | lesson | 枚舉盲區 —— 缺項不會出現在自己的清單上，而枚舉會乾淨地 exit 0 | [Content, Aggregate, Identity, Status] | [lesson_enumerator_blind_spot](lesson_enumerator_blind_spot.md) |
