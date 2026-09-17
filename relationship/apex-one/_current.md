@@ -11,9 +11,9 @@ emotion_vector:
   loyalty: 0.016
 surface_score: 59
 tier: 信任
-event_count: 18
-opinion_count: 15
-last_updated: 2026-09-03T15:38:01.881Z
+event_count: 19
+opinion_count: 16
+last_updated: 2026-09-17T08:36:19.323Z
 recomputable: true
 opening_balance: null
 generated: mechanical   # 事實來源是 events/；本檔可刪除重建
@@ -21,4 +21,4 @@ generated: mechanical   # 事實來源是 events/；本檔可刪除重建
 
 # summit → apex-one
 
-`信任`　surface_score **59**　事件 18 筆　看法 15 則
+`信任`　surface_score **59**　事件 19 筆　看法 16 則
