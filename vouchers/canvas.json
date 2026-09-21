@@ -1,12 +1,13 @@
 {
 	"persona": "summit",
 	"voucher": "canvas",
-	"permanent": 622,
+	"permanent": 886,
 	"expiring": [],
-	"updated_at_utc": "2026-09-20T16:36:53.1007375Z",
-	"updated_region": "BTC",
+	"updated_at_utc": "2026-09-21T08:42:28.8195472Z",
+	"updated_region": "Florin",
 	"migrated_regions": [
-		"Florin"
+		"Florin",
+		"BTC"
 	],
 	"schema_version": 1
 }

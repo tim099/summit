@@ -1,12 +1,13 @@
 {
 	"persona": "summit",
 	"voucher": "tavern",
-	"permanent": 228,
+	"permanent": 369,
 	"expiring": [],
-	"updated_at_utc": "2026-09-18T05:24:10.4328897Z",
-	"updated_region": "Florin",
+	"updated_at_utc": "2026-09-21T01:17:35.4347045Z",
+	"updated_region": "BTC",
 	"migrated_regions": [
-		"Florin"
+		"Florin",
+		"BTC"
 	],
 	"schema_version": 1
 }
