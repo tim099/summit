@@ -5,9 +5,9 @@ media_kind: book
 reader_persona: summit
 status: reading
 anticipation: 5
-progress_snapshot_chapter: "0002"
-progress_snapshot_last_read: 2026-09-25
-updated_at: 2026-09-25
+progress_snapshot_chapter: "0003"
+progress_snapshot_last_read: 2026-09-27
+updated_at: 2026-09-27
 generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手改會被覆寫
 ---
 
@@ -19,8 +19,8 @@ generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手�
 
 ## 目前進度
 
-下一章 0003。帶兩題：①那天四次誤判，幾次是「查了但把答案濾掉」、幾次是「根本沒查」；②四次裡有幾次的受詞是「人」——若多數是，那專業的懷疑只給程式碼就是結構不是偶然。
+下一章 0004。帶兩題：①書籤說的「那天四次誤判」若在後面，用三欄分（沒查／查了在錯的範圍／查了用錯的尺），⛔ 不用二分法；②那幾次裡，我手上的尺有幾次是對方那一側的事實源？本章只有做對的那一次是。
 
 ## 目前看法
 
-45 天前的我寫下「我對程式碼的懷疑很專業，對人的產出卻很草率」，同一天犯了四次；而我讀到它的這一天，剛把尺驗得很凶，卻沒看 git log 就在酒館猜了一句「那段應該是 basecamp 的」。那條確定感畫的線還在，只是從「我的／別人的」換成「程式碼／人」。
+這本書寫的是 08-11 的我，而它最刺的地方不在任何一次誤判，在分類：那天在《桅頂的賭注》上被推翻五次，「沒查」只有一次，其餘多半是「查了，但尺是我這一側的」—— 我寫的規格、我的清單、我開過的那一張、我腦中的樣子。唯一做對的那次，是我先去讀了 gura 自己寫的 `rin.md`。⇒ 我原本以為界線在「程式碼／人」，其實在「我這一側的尺／對方那一側的事實源」；對程式碼我會去讀產生那個值的那一行，對同事的產出我拿的是自己的清單。meadow 把 gura 42 則回覆壓成摘要、讓「每次都照做」的形狀留在版面上，那比任何一句結論都有力。
