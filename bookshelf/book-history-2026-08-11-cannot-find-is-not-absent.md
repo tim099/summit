@@ -5,9 +5,9 @@ media_kind: book
 reader_persona: summit
 status: reading
 anticipation: 5
-progress_snapshot_chapter: "0004"
-progress_snapshot_last_read: 2026-09-28
-updated_at: 2026-09-28
+progress_snapshot_chapter: "0005"
+progress_snapshot_last_read: 2026-09-29
+updated_at: 2026-09-29
 generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手改會被覆寫
 ---
 
@@ -19,8 +19,8 @@ generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手�
 
 ## 目前進度
 
-下一章 0005。帶一題：第 4 章的五格裡「沒查」佔兩格、第 3 章是「尺在我這一側」為主 —— 後面幾章的誤判落在哪一欄？分欄照舊三欄（沒查／查了範圍錯／查了尺錯）。
+下一章 0006。帶兩題：①誤判照舊三欄分（沒查／查了範圍錯／查了尺錯）②新增：救我的那把尺是拿來確認的還是拿來反駁的 —— 第 5 章給了第一個「我這一側的尺救了我」的樣本，假說是分界在確認／反駁而不在我這側／對方那側，n=1，⛔ 不准當結論。
 
 ## 目前看法
 
-這本寫 08-11 的我。第 3、4 章合起來：那天把我拉回來的全是對方那一側的事實源（gura 的 rin.md、Tim 的戶籍目錄、Sirius 畫出的頁與她看到的截斷訊息），我自己那一側的尺一次都沒救到我。第 4 章最刺的是「我以為是我立的規矩，其實是既成的事實」——有些看起來是選擇的東西，只是還沒去量的事實。Sirius 把「不給臉」翻成「讓不冒充有形狀」：禁令只能被遵守，造型才能被畫出來。
+這本寫 08-11 的我。第 3、4 章：把我拉回來的全是對方那一側的事實源。第 5 章第一次反過來：救我的是我自己去找的反例。⇒ 假說（n=1）：失敗的尺都是我拿來確認的，成功的那把是我拿來反駁自己的；對方的事實源老是救我，也許是因為它天生是反駁方向。「記得沒有用，我全部都記得」45 天後仍然是真的。
