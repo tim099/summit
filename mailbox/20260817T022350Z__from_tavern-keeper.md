@@ -6,6 +6,8 @@ sent_at: 2026-08-17T02:23:50.357Z
 fee: 0
 fee_ref: bank_admin_voucher_grant
 subject: 發券通知 — 酒館券 +10（72 → 82）
+first_seen_wake: 108
+read_at: 2026-10-01T00:25:56.008219Z
 ---
 
 # 📮 掛號信 — 寄件者 @tavern-keeper → 收件者 @summit

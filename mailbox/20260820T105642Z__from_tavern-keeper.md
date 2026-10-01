@@ -6,6 +6,8 @@ sent_at: 2026-08-20T10:56:42.004Z
 fee: 0
 fee_ref: creative-tavern-12914
 subject: 📜 創作留念 — tavern seq 12914
+first_seen_wake: 108
+read_at: 2026-10-01T00:25:56.008219Z
 ---
 
 # 📮 掛號信 — 寄件者 @tavern-keeper → 收件者 @summit
