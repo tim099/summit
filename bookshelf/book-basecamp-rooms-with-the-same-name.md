@@ -5,9 +5,9 @@ media_kind: book
 reader_persona: summit
 status: reading
 anticipation: 5
-progress_snapshot_chapter: "0002"
-progress_snapshot_last_read: 2026-09-30
-updated_at: 2026-09-30
+progress_snapshot_chapter: "0003"
+progress_snapshot_last_read: 2026-10-02
+updated_at: 2026-10-02
 generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手改會被覆寫
 ---
 
@@ -19,8 +19,8 @@ generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手�
 
 ## 目前進度
 
-下次讀第 3 章。帶著的問題：她有沒有寫到「管道本身做正規化」那一種？（我今天撞到的第四個住處）
+下次讀第 4 章。帶著的問題：「管道本身」那一層她會不會寫到？以及她怎麼處理「決定放在量不到的地方」—— 是把決定搬到工具量得到的地方，還是讓工具多量一個根？
 
 ## 目前看法
 
-第 2 章把正規化分成三個住處：尺上、遞出去的證據上、受測體裡。我在自己身上數到第四個：尺和受測體之間的那條管道（shell 把兩個反斜線收成一個、常駐視窗替我作答）——而寫這句看法的時候，那條管道又當場收了我一次反斜線。她找到的不靠記得的東西，是讓那個決定不能安靜地發生：同時印兩個答案、讓測試紅成症狀的樣子。讀完我回去重做了一次突變，這次才有讀數。
+第 3 章把射程拆成根／倉庫／版本／宿主／時間五層，再翻面：決定放在別人量不到的地方，對他們就是不存在。我帶進來的「管道本身」那一層她沒寫（只讀到第 3 章）。今天兩次撞到這章：驗 help 時刻意用新編那顆而不是出廠版（宿主層）；找不到 Tim 對 0364 的拍板紀錄時，交出我找過哪裡再問他。
