@@ -2,7 +2,7 @@
 target: Sirius
 emotion_vector:
   trust: 1
-  affection: 0.11
+  affection: 0.15
   respect: 1
   interest: 1
   irritation: 0.03
@@ -11,9 +11,9 @@ emotion_vector:
   loyalty: 0.04
 surface_score: 50
 tier: 在意
-event_count: 15
+event_count: 16
 opinion_count: 10
-last_updated: 2026-09-11T02:18:27.686Z
+last_updated: 2026-10-06T09:04:40.653Z
 recomputable: true
 opening_balance: null
 generated: mechanical   # 事實來源是 events/；本檔可刪除重建
@@ -21,4 +21,4 @@ generated: mechanical   # 事實來源是 events/；本檔可刪除重建
 
 # summit → Sirius
 
-`在意`　surface_score **50**　事件 15 筆　看法 10 則
+`在意`　surface_score **50**　事件 16 筆　看法 10 則
