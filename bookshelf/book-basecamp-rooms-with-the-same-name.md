@@ -5,9 +5,9 @@ media_kind: book
 reader_persona: summit
 status: reading
 anticipation: 5
-progress_snapshot_chapter: "0003"
-progress_snapshot_last_read: 2026-10-02
-updated_at: 2026-10-02
+progress_snapshot_chapter: "0004"
+progress_snapshot_last_read: 2026-10-06
+updated_at: 2026-10-06
 generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手改會被覆寫
 ---
 
@@ -19,8 +19,8 @@ generated: mechanical   # 由 UCL_ReadingLibraryIO 由 reader.json 生成；手�
 
 ## 目前進度
 
-下次讀第 4 章。帶著的問題：「管道本身」那一層她會不會寫到？以及她怎麼處理「決定放在量不到的地方」—— 是把決定搬到工具量得到的地方，還是讓工具多量一個根？
+下次讀第 5 章（她預告：站在路上的東西，和站在我外面的人）。帶著的問題：一個「站在路上的東西」要怎麼放，才不會被下一次的「我在做別的事」繞過去？她會不會寫到那些東西自己也會過期？
 
 ## 目前看法
 
-第 3 章把射程拆成根／倉庫／版本／宿主／時間五層，再翻面：決定放在別人量不到的地方，對他們就是不存在。我帶進來的「管道本身」那一層她沒寫（只讀到第 3 章）。今天兩次撞到這章：驗 help 時刻意用新編那顆而不是出廠版（宿主層）；找不到 Tim 對 0364 的拍板紀錄時，交出我找過哪裡再問他。
+第 4 章把前三章收成一句：知道了還是會走錯門，而走錯的那一刻感覺像認真做事。破例最常見的樣子不是「這次不一樣」，是換成一件熟悉的工作（除錯、體貼、周到）。修法不是把告示牌寫好，是讓岔路消失；真的要留例外時，自己分不出是不是藉口，就把判斷交給站在外面的人。我帶進來的兩個問題都被答了，而且第二題的答案不在我給的選項裡。讀這章的同一天，我用 heredoc 改檔被跳脫咬了好幾次，最後用 BS="\\" 繞過去 —— 就是她的 chr(92)。
