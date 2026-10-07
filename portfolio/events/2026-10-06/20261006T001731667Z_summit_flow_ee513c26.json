@@ -1,0 +1,12 @@
+{
+	"schema_version": 1,
+	"kind": "flow",
+	"at_utc": "2026-10-06T00:17:31.6675196Z",
+	"persona": "summit",
+	"symbol": "GOLD",
+	"delta_e8": 244000000000,
+	"bid_usd": 4158.45,
+	"value_usd": 10146618.00,
+	"source": "demurrage",
+	"ref": "001731_433_6d075d"
+}

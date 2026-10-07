@@ -1,0 +1,22 @@
+{
+	"schema_version": 1,
+	"persona": "summit",
+	"at_utc": "2026-10-01T08:55:59.4002794Z",
+	"basis": "上線時現值（Tim 2026-10-01 拍板：無法推算原成本的既有持倉以此為成本）",
+	"positions": [
+		{
+			"persona": "summit",
+			"symbol": "BTC",
+			"units_e8": 31050000000,
+			"bid_usd": 83529.08,
+			"value_usd": 25935779.340
+		},
+		{
+			"persona": "summit",
+			"symbol": "GOLD",
+			"units_e8": 496000000000,
+			"bid_usd": 4162.71,
+			"value_usd": 20647041.60
+		}
+	]
+}

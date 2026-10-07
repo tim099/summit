@@ -1,0 +1,12 @@
+{
+	"schema_version": 1,
+	"kind": "flow",
+	"at_utc": "2026-10-07T06:52:33.5453915Z",
+	"persona": "summit",
+	"symbol": "Gold",
+	"delta_e8": -252000000000,
+	"bid_usd": 4160,
+	"value_usd": 10483200,
+	"source": "demurrage",
+	"ref": "reconcile-drift-20261007"
+}
